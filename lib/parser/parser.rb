@@ -14,7 +14,7 @@ class Parser
 	end
 
 	def update_category()
-		doc = Nokogiri::HTML(open("#{@store.base_url}#{@store.pavilion}"))
+		doc = Nokogiri::HTML(open("#{@store.base_url}#{@store.pavilion_url}"))
 		categories = doc.css("ul.cell_standart_struct1");
 
 		categories.each do |category|
