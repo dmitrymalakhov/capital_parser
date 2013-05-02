@@ -737,3 +737,798 @@ Processing by ParserController#status as HTML
   [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
   Rendered parser/status.html.haml within layouts/main (9.2ms)
 Completed 200 OK in 5253ms (Views: 112.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 01:31:23 +0400
+Connecting to database specified by database.yml
+
+SyntaxError (/home/dmitry/capital_parser/lib/parser/parser.rb:31: syntax error, unexpected $end, expecting keyword_end):
+  app/controllers/parser_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (20.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (54.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 01:32:24 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (151.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:33 UTC +00:00], ["store_id", 1], ["title", "Планировки этажей"], ["updated_at", Thu, 02 May 2013 21:32:33 UTC +00:00]]
+  [1m[35m (178.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:33 UTC +00:00], ["store_id", 1], ["title", "Женская одежда"], ["updated_at", Thu, 02 May 2013 21:32:33 UTC +00:00]]
+  [1m[36m (154.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:34 UTC +00:00], ["store_id", 1], ["title", "Аксессуары"], ["updated_at", Thu, 02 May 2013 21:32:34 UTC +00:00]]
+  [1m[35m (130.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:34 UTC +00:00], ["store_id", 1], ["title", "Бельё"], ["updated_at", Thu, 02 May 2013 21:32:34 UTC +00:00]]
+  [1m[36m (130.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:34 UTC +00:00], ["store_id", 1], ["title", "Кожгалантерея, сумки."], ["updated_at", Thu, 02 May 2013 21:32:34 UTC +00:00]]
+  [1m[35m (141.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:34 UTC +00:00], ["store_id", 1], ["title", "Косметика и парфюмерия"], ["updated_at", Thu, 02 May 2013 21:32:34 UTC +00:00]]
+  [1m[36m (131.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:34 UTC +00:00], ["store_id", 1], ["title", "Мебель, товары для дома"], ["updated_at", Thu, 02 May 2013 21:32:34 UTC +00:00]]
+  [1m[35m (130.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:34 UTC +00:00], ["store_id", 1], ["title", "Мультимедия, цифровая и бытовая техника"], ["updated_at", Thu, 02 May 2013 21:32:34 UTC +00:00]]
+  [1m[36m (141.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:34 UTC +00:00], ["store_id", 1], ["title", "Обувь"], ["updated_at", Thu, 02 May 2013 21:32:34 UTC +00:00]]
+  [1m[35m (152.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:35 UTC +00:00], ["store_id", 1], ["title", "Мужская одежда"], ["updated_at", Thu, 02 May 2013 21:32:35 UTC +00:00]]
+  [1m[36m (152.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:35 UTC +00:00], ["store_id", 1], ["title", "Детская одежда"], ["updated_at", Thu, 02 May 2013 21:32:35 UTC +00:00]]
+  [1m[35m (142.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:35 UTC +00:00], ["store_id", 1], ["title", "Одежда для всей семьи"], ["updated_at", Thu, 02 May 2013 21:32:35 UTC +00:00]]
+  [1m[36m (130.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:35 UTC +00:00], ["store_id", 1], ["title", "Верхняя одежда"], ["updated_at", Thu, 02 May 2013 21:32:35 UTC +00:00]]
+  [1m[35m (141.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:35 UTC +00:00], ["store_id", 1], ["title", "Одежда для будущих мам"], ["updated_at", Thu, 02 May 2013 21:32:35 UTC +00:00]]
+  [1m[36m (152.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:35 UTC +00:00], ["store_id", 1], ["title", "Подарки"], ["updated_at", Thu, 02 May 2013 21:32:35 UTC +00:00]]
+  [1m[35m (163.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:36 UTC +00:00], ["store_id", 1], ["title", "Продукты питания"], ["updated_at", Thu, 02 May 2013 21:32:36 UTC +00:00]]
+  [1m[36m (131.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:36 UTC +00:00], ["store_id", 1], ["title", "Товары для спорта"], ["updated_at", Thu, 02 May 2013 21:32:36 UTC +00:00]]
+  [1m[35m (119.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:36 UTC +00:00], ["store_id", 1], ["title", "Товары для дома"], ["updated_at", Thu, 02 May 2013 21:32:36 UTC +00:00]]
+  [1m[36m (130.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:36 UTC +00:00], ["store_id", 1], ["title", "Товары для детей"], ["updated_at", Thu, 02 May 2013 21:32:36 UTC +00:00]]
+  [1m[35m (141.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:36 UTC +00:00], ["store_id", 1], ["title", "Товары для здоровья, оптика"], ["updated_at", Thu, 02 May 2013 21:32:36 UTC +00:00]]
+  [1m[36m (152.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:36 UTC +00:00], ["store_id", 1], ["title", "Ювелирные изделия, часы"], ["updated_at", Thu, 02 May 2013 21:32:36 UTC +00:00]]
+  [1m[35m (142.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:36 UTC +00:00], ["store_id", 1], ["title", "Хобби и увлечения"], ["updated_at", Thu, 02 May 2013 21:32:36 UTC +00:00]]
+  [1m[36m (130.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (78.6ms)
+Completed 200 OK in 11271ms (Views: 205.0ms | ActiveRecord: 3298.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 01:32:41 +0400
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:44 UTC +00:00], ["store_id", 1], ["title", "Планировки этажей"], ["updated_at", Thu, 02 May 2013 21:32:44 UTC +00:00]]
+  [1m[35m (161.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:44 UTC +00:00], ["store_id", 1], ["title", "Женская одежда"], ["updated_at", Thu, 02 May 2013 21:32:44 UTC +00:00]]
+  [1m[36m (140.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:44 UTC +00:00], ["store_id", 1], ["title", "Аксессуары"], ["updated_at", Thu, 02 May 2013 21:32:44 UTC +00:00]]
+  [1m[35m (163.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:45 UTC +00:00], ["store_id", 1], ["title", "Бельё"], ["updated_at", Thu, 02 May 2013 21:32:45 UTC +00:00]]
+  [1m[36m (152.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:45 UTC +00:00], ["store_id", 1], ["title", "Кожгалантерея, сумки."], ["updated_at", Thu, 02 May 2013 21:32:45 UTC +00:00]]
+  [1m[35m (165.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:45 UTC +00:00], ["store_id", 1], ["title", "Косметика и парфюмерия"], ["updated_at", Thu, 02 May 2013 21:32:45 UTC +00:00]]
+  [1m[36m (142.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:45 UTC +00:00], ["store_id", 1], ["title", "Мебель, товары для дома"], ["updated_at", Thu, 02 May 2013 21:32:45 UTC +00:00]]
+  [1m[35m (152.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:45 UTC +00:00], ["store_id", 1], ["title", "Мультимедия, цифровая и бытовая техника"], ["updated_at", Thu, 02 May 2013 21:32:45 UTC +00:00]]
+  [1m[36m (163.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:45 UTC +00:00], ["store_id", 1], ["title", "Обувь"], ["updated_at", Thu, 02 May 2013 21:32:45 UTC +00:00]]
+  [1m[35m (152.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:46 UTC +00:00], ["store_id", 1], ["title", "Мужская одежда"], ["updated_at", Thu, 02 May 2013 21:32:46 UTC +00:00]]
+  [1m[36m (164.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:46 UTC +00:00], ["store_id", 1], ["title", "Детская одежда"], ["updated_at", Thu, 02 May 2013 21:32:46 UTC +00:00]]
+  [1m[35m (153.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:46 UTC +00:00], ["store_id", 1], ["title", "Одежда для всей семьи"], ["updated_at", Thu, 02 May 2013 21:32:46 UTC +00:00]]
+  [1m[36m (161.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:46 UTC +00:00], ["store_id", 1], ["title", "Верхняя одежда"], ["updated_at", Thu, 02 May 2013 21:32:46 UTC +00:00]]
+  [1m[35m (164.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:46 UTC +00:00], ["store_id", 1], ["title", "Одежда для будущих мам"], ["updated_at", Thu, 02 May 2013 21:32:46 UTC +00:00]]
+  [1m[36m (161.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:46 UTC +00:00], ["store_id", 1], ["title", "Подарки"], ["updated_at", Thu, 02 May 2013 21:32:46 UTC +00:00]]
+  [1m[35m (175.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:47 UTC +00:00], ["store_id", 1], ["title", "Продукты питания"], ["updated_at", Thu, 02 May 2013 21:32:47 UTC +00:00]]
+  [1m[36m (142.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:47 UTC +00:00], ["store_id", 1], ["title", "Товары для спорта"], ["updated_at", Thu, 02 May 2013 21:32:47 UTC +00:00]]
+  [1m[35m (142.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:47 UTC +00:00], ["store_id", 1], ["title", "Товары для дома"], ["updated_at", Thu, 02 May 2013 21:32:47 UTC +00:00]]
+  [1m[36m (141.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:47 UTC +00:00], ["store_id", 1], ["title", "Товары для детей"], ["updated_at", Thu, 02 May 2013 21:32:47 UTC +00:00]]
+  [1m[35m (141.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:47 UTC +00:00], ["store_id", 1], ["title", "Товары для здоровья, оптика"], ["updated_at", Thu, 02 May 2013 21:32:47 UTC +00:00]]
+  [1m[36m (163.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:32:47 UTC +00:00], ["store_id", 1], ["title", "Ювелирные изделия, часы"], ["updated_at", Thu, 02 May 2013 21:32:47 UTC +00:00]]
+  [1m[35m (141.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:32:48 UTC +00:00], ["store_id", 1], ["title", "Хобби и увлечения"], ["updated_at", Thu, 02 May 2013 21:32:48 UTC +00:00]]
+  [1m[36m (142.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (1.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (20.2ms)
+Completed 200 OK in 6196ms (Views: 22.4ms | ActiveRecord: 3412.9ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 01:54:17 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.4ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+Completed 500 Internal Server Error in 8263ms
+
+NameError (undefined local variable or method `store' for #<Parser:0xa2217bc>):
+  lib/parser/parser.rb:22:in `block in update_category'
+  lib/parser/parser.rb:20:in `update_category'
+  app/controllers/parser_controller.rb:8:in `status'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 01:55:15 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.4ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (94.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:26 UTC +00:00], ["store_id", 1], ["title", "Планировки этажей"], ["updated_at", Thu, 02 May 2013 21:55:26 UTC +00:00]]
+  [1m[35m (165.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:27 UTC +00:00], ["store_id", 1], ["title", "Женская одежда"], ["updated_at", Thu, 02 May 2013 21:55:27 UTC +00:00]]
+  [1m[36m (251.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:27 UTC +00:00], ["store_id", 1], ["title", "Аксессуары"], ["updated_at", Thu, 02 May 2013 21:55:27 UTC +00:00]]
+  [1m[35m (326.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:27 UTC +00:00], ["store_id", 1], ["title", "Бельё"], ["updated_at", Thu, 02 May 2013 21:55:27 UTC +00:00]]
+  [1m[36m (329.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:28 UTC +00:00], ["store_id", 1], ["title", "Кожгалантерея, сумки."], ["updated_at", Thu, 02 May 2013 21:55:28 UTC +00:00]]
+  [1m[35m (139.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:28 UTC +00:00], ["store_id", 1], ["title", "Косметика и парфюмерия"], ["updated_at", Thu, 02 May 2013 21:55:28 UTC +00:00]]
+  [1m[36m (140.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:28 UTC +00:00], ["store_id", 1], ["title", "Мебель, товары для дома"], ["updated_at", Thu, 02 May 2013 21:55:28 UTC +00:00]]
+  [1m[35m (154.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:28 UTC +00:00], ["store_id", 1], ["title", "Мультимедия, цифровая и бытовая техника"], ["updated_at", Thu, 02 May 2013 21:55:28 UTC +00:00]]
+  [1m[36m (195.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:28 UTC +00:00], ["store_id", 1], ["title", "Обувь"], ["updated_at", Thu, 02 May 2013 21:55:28 UTC +00:00]]
+  [1m[35m (176.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:28 UTC +00:00], ["store_id", 1], ["title", "Мужская одежда"], ["updated_at", Thu, 02 May 2013 21:55:28 UTC +00:00]]
+  [1m[36m (162.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:29 UTC +00:00], ["store_id", 1], ["title", "Детская одежда"], ["updated_at", Thu, 02 May 2013 21:55:29 UTC +00:00]]
+  [1m[35m (198.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:29 UTC +00:00], ["store_id", 1], ["title", "Одежда для всей семьи"], ["updated_at", Thu, 02 May 2013 21:55:29 UTC +00:00]]
+  [1m[36m (184.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:29 UTC +00:00], ["store_id", 1], ["title", "Верхняя одежда"], ["updated_at", Thu, 02 May 2013 21:55:29 UTC +00:00]]
+  [1m[35m (163.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:29 UTC +00:00], ["store_id", 1], ["title", "Одежда для будущих мам"], ["updated_at", Thu, 02 May 2013 21:55:29 UTC +00:00]]
+  [1m[36m (129.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:29 UTC +00:00], ["store_id", 1], ["title", "Подарки"], ["updated_at", Thu, 02 May 2013 21:55:29 UTC +00:00]]
+  [1m[35m (129.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:29 UTC +00:00], ["store_id", 1], ["title", "Продукты питания"], ["updated_at", Thu, 02 May 2013 21:55:29 UTC +00:00]]
+  [1m[36m (165.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:30 UTC +00:00], ["store_id", 1], ["title", "Товары для спорта"], ["updated_at", Thu, 02 May 2013 21:55:30 UTC +00:00]]
+  [1m[35m (151.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:30 UTC +00:00], ["store_id", 1], ["title", "Товары для дома"], ["updated_at", Thu, 02 May 2013 21:55:30 UTC +00:00]]
+  [1m[36m (187.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:30 UTC +00:00], ["store_id", 1], ["title", "Товары для детей"], ["updated_at", Thu, 02 May 2013 21:55:30 UTC +00:00]]
+  [1m[35m (129.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:30 UTC +00:00], ["store_id", 1], ["title", "Товары для здоровья, оптика"], ["updated_at", Thu, 02 May 2013 21:55:30 UTC +00:00]]
+  [1m[36m (152.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:30 UTC +00:00], ["store_id", 1], ["title", "Ювелирные изделия, часы"], ["updated_at", Thu, 02 May 2013 21:55:30 UTC +00:00]]
+  [1m[35m (152.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:30 UTC +00:00], ["store_id", 1], ["title", "Хобби и увлечения"], ["updated_at", Thu, 02 May 2013 21:55:30 UTC +00:00]]
+  [1m[36m (140.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (27.0ms)
+Completed 200 OK in 14354ms (Views: 167.9ms | ActiveRecord: 4081.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 01:55:35 +0400
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.5ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:37 UTC +00:00], ["store_id", 1], ["title", "Планировки этажей"], ["updated_at", Thu, 02 May 2013 21:55:37 UTC +00:00]]
+  [1m[35m (181.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:38 UTC +00:00], ["store_id", 1], ["title", "Женская одежда"], ["updated_at", Thu, 02 May 2013 21:55:38 UTC +00:00]]
+  [1m[36m (161.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:38 UTC +00:00], ["store_id", 1], ["title", "Аксессуары"], ["updated_at", Thu, 02 May 2013 21:55:38 UTC +00:00]]
+  [1m[35m (187.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:38 UTC +00:00], ["store_id", 1], ["title", "Бельё"], ["updated_at", Thu, 02 May 2013 21:55:38 UTC +00:00]]
+  [1m[36m (152.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:38 UTC +00:00], ["store_id", 1], ["title", "Кожгалантерея, сумки."], ["updated_at", Thu, 02 May 2013 21:55:38 UTC +00:00]]
+  [1m[35m (196.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:38 UTC +00:00], ["store_id", 1], ["title", "Косметика и парфюмерия"], ["updated_at", Thu, 02 May 2013 21:55:38 UTC +00:00]]
+  [1m[36m (140.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:38 UTC +00:00], ["store_id", 1], ["title", "Мебель, товары для дома"], ["updated_at", Thu, 02 May 2013 21:55:38 UTC +00:00]]
+  [1m[35m (175.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:39 UTC +00:00], ["store_id", 1], ["title", "Мультимедия, цифровая и бытовая техника"], ["updated_at", Thu, 02 May 2013 21:55:39 UTC +00:00]]
+  [1m[36m (151.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:39 UTC +00:00], ["store_id", 1], ["title", "Обувь"], ["updated_at", Thu, 02 May 2013 21:55:39 UTC +00:00]]
+  [1m[35m (143.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:39 UTC +00:00], ["store_id", 1], ["title", "Мужская одежда"], ["updated_at", Thu, 02 May 2013 21:55:39 UTC +00:00]]
+  [1m[36m (151.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:39 UTC +00:00], ["store_id", 1], ["title", "Детская одежда"], ["updated_at", Thu, 02 May 2013 21:55:39 UTC +00:00]]
+  [1m[35m (164.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:39 UTC +00:00], ["store_id", 1], ["title", "Одежда для всей семьи"], ["updated_at", Thu, 02 May 2013 21:55:39 UTC +00:00]]
+  [1m[36m (165.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:39 UTC +00:00], ["store_id", 1], ["title", "Верхняя одежда"], ["updated_at", Thu, 02 May 2013 21:55:39 UTC +00:00]]
+  [1m[35m (153.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:40 UTC +00:00], ["store_id", 1], ["title", "Одежда для будущих мам"], ["updated_at", Thu, 02 May 2013 21:55:40 UTC +00:00]]
+  [1m[36m (143.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:40 UTC +00:00], ["store_id", 1], ["title", "Подарки"], ["updated_at", Thu, 02 May 2013 21:55:40 UTC +00:00]]
+  [1m[35m (202.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:40 UTC +00:00], ["store_id", 1], ["title", "Продукты питания"], ["updated_at", Thu, 02 May 2013 21:55:40 UTC +00:00]]
+  [1m[36m (203.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:40 UTC +00:00], ["store_id", 1], ["title", "Товары для спорта"], ["updated_at", Thu, 02 May 2013 21:55:40 UTC +00:00]]
+  [1m[35m (185.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:40 UTC +00:00], ["store_id", 1], ["title", "Товары для дома"], ["updated_at", Thu, 02 May 2013 21:55:40 UTC +00:00]]
+  [1m[36m (154.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:41 UTC +00:00], ["store_id", 1], ["title", "Товары для детей"], ["updated_at", Thu, 02 May 2013 21:55:41 UTC +00:00]]
+  [1m[35m (163.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:41 UTC +00:00], ["store_id", 1], ["title", "Товары для здоровья, оптика"], ["updated_at", Thu, 02 May 2013 21:55:41 UTC +00:00]]
+  [1m[36m (140.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 02 May 2013 21:55:41 UTC +00:00], ["store_id", 1], ["title", "Ювелирные изделия, часы"], ["updated_at", Thu, 02 May 2013 21:55:41 UTC +00:00]]
+  [1m[35m (174.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:55:41 UTC +00:00], ["store_id", 1], ["title", "Хобби и увлечения"], ["updated_at", Thu, 02 May 2013 21:55:41 UTC +00:00]]
+  [1m[36m (151.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (1.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (26.7ms)
+Completed 200 OK in 6282ms (Views: 29.7ms | ActiveRecord: 3665.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 01:58:07 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (58.5ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 21:58:16 UTC +00:00], ["store_id", 1], ["title", "Планировки этажей"], ["updated_at", Thu, 02 May 2013 21:58:16 UTC +00:00]]
+  [1m[36m (209.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1[0m
+  Rendered parser/status.html.haml within layouts/main (11.1ms)
+Completed 200 OK in 8219ms (Views: 117.2ms | ActiveRecord: 274.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 01:58:33 +0400
+Processing by ParserController#status as HTML
+  [1m[35mStore Load (0.4ms)[0m  SELECT "stores".* FROM "stores" LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1[0m
+  Rendered parser/status.html.haml within layouts/main (2.7ms)
+Completed 200 OK in 4322ms (Views: 5.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 02:01:11 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.4ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 5742ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: locked):
+  lib/parser/parser.rb:22:in `block in update_category'
+  lib/parser/parser.rb:20:in `update_category'
+  app/controllers/parser_controller.rb:8:in `status'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 02:08:16 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.6ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Планировки этажей' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (136.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:20 UTC +00:00], ["store_id", 1], ["title", "Планировки этажей"], ["updated_at", Thu, 02 May 2013 22:08:20 UTC +00:00]]
+  [1m[36m (150.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Женская одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:21 UTC +00:00], ["store_id", 1], ["title", "Женская одежда"], ["updated_at", Thu, 02 May 2013 22:08:21 UTC +00:00]]
+  [1m[36m (215.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Аксессуары' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:21 UTC +00:00], ["store_id", 1], ["title", "Аксессуары"], ["updated_at", Thu, 02 May 2013 22:08:21 UTC +00:00]]
+  [1m[36m (150.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Бельё' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:21 UTC +00:00], ["store_id", 1], ["title", "Бельё"], ["updated_at", Thu, 02 May 2013 22:08:21 UTC +00:00]]
+  [1m[36m (149.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Кожгалантерея, сумки.' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:21 UTC +00:00], ["store_id", 1], ["title", "Кожгалантерея, сумки."], ["updated_at", Thu, 02 May 2013 22:08:21 UTC +00:00]]
+  [1m[36m (192.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Косметика и парфюмерия' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:21 UTC +00:00], ["store_id", 1], ["title", "Косметика и парфюмерия"], ["updated_at", Thu, 02 May 2013 22:08:21 UTC +00:00]]
+  [1m[36m (159.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мебель, товары для дома' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:22 UTC +00:00], ["store_id", 1], ["title", "Мебель, товары для дома"], ["updated_at", Thu, 02 May 2013 22:08:22 UTC +00:00]]
+  [1m[36m (227.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мультимедия, цифровая и бытовая техника' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:22 UTC +00:00], ["store_id", 1], ["title", "Мультимедия, цифровая и бытовая техника"], ["updated_at", Thu, 02 May 2013 22:08:22 UTC +00:00]]
+  [1m[36m (116.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Обувь' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:22 UTC +00:00], ["store_id", 1], ["title", "Обувь"], ["updated_at", Thu, 02 May 2013 22:08:22 UTC +00:00]]
+  [1m[36m (183.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мужская одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:22 UTC +00:00], ["store_id", 1], ["title", "Мужская одежда"], ["updated_at", Thu, 02 May 2013 22:08:22 UTC +00:00]]
+  [1m[36m (158.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Детская одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:22 UTC +00:00], ["store_id", 1], ["title", "Детская одежда"], ["updated_at", Thu, 02 May 2013 22:08:22 UTC +00:00]]
+  [1m[36m (194.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для всей семьи' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:23 UTC +00:00], ["store_id", 1], ["title", "Одежда для всей семьи"], ["updated_at", Thu, 02 May 2013 22:08:23 UTC +00:00]]
+  [1m[36m (127.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Верхняя одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:23 UTC +00:00], ["store_id", 1], ["title", "Верхняя одежда"], ["updated_at", Thu, 02 May 2013 22:08:23 UTC +00:00]]
+  [1m[36m (161.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для будущих мам' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:23 UTC +00:00], ["store_id", 1], ["title", "Одежда для будущих мам"], ["updated_at", Thu, 02 May 2013 22:08:23 UTC +00:00]]
+  [1m[36m (149.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Подарки' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:23 UTC +00:00], ["store_id", 1], ["title", "Подарки"], ["updated_at", Thu, 02 May 2013 22:08:23 UTC +00:00]]
+  [1m[36m (149.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Продукты питания' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:23 UTC +00:00], ["store_id", 1], ["title", "Продукты питания"], ["updated_at", Thu, 02 May 2013 22:08:23 UTC +00:00]]
+  [1m[36m (138.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для спорта' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:23 UTC +00:00], ["store_id", 1], ["title", "Товары для спорта"], ["updated_at", Thu, 02 May 2013 22:08:23 UTC +00:00]]
+  [1m[36m (138.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для дома' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:23 UTC +00:00], ["store_id", 1], ["title", "Товары для дома"], ["updated_at", Thu, 02 May 2013 22:08:23 UTC +00:00]]
+  [1m[36m (160.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для детей' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:24 UTC +00:00], ["store_id", 1], ["title", "Товары для детей"], ["updated_at", Thu, 02 May 2013 22:08:24 UTC +00:00]]
+  [1m[36m (149.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для здоровья, оптика' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:24 UTC +00:00], ["store_id", 1], ["title", "Товары для здоровья, оптика"], ["updated_at", Thu, 02 May 2013 22:08:24 UTC +00:00]]
+  [1m[36m (149.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Ювелирные изделия, часы' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:24 UTC +00:00], ["store_id", 1], ["title", "Ювелирные изделия, часы"], ["updated_at", Thu, 02 May 2013 22:08:24 UTC +00:00]]
+  [1m[36m (137.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Хобби и увлечения' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:08:24 UTC +00:00], ["store_id", 1], ["title", "Хобби и увлечения"], ["updated_at", Thu, 02 May 2013 22:08:24 UTC +00:00]]
+  [1m[36m (183.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (20.6ms)
+Completed 200 OK in 7159ms (Views: 179.5ms | ActiveRecord: 3733.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 02:08:28 +0400
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Планировки этажей' LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Женская одежда' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Аксессуары' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Бельё' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Кожгалантерея, сумки.' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Косметика и парфюмерия' LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мебель, товары для дома' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мультимедия, цифровая и бытовая техника' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Обувь' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мужская одежда' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Детская одежда' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для всей семьи' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Верхняя одежда' LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для будущих мам' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Подарки' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Продукты питания' LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для спорта' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для дома' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для детей' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для здоровья, оптика' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Ювелирные изделия, часы' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Хобби и увлечения' LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (9.1ms)
+Completed 200 OK in 3308ms (Views: 11.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 02:08:36 +0400
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Планировки этажей' LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Женская одежда' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Аксессуары' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Бельё' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Кожгалантерея, сумки.' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Косметика и парфюмерия' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мебель, товары для дома' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мультимедия, цифровая и бытовая техника' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Обувь' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мужская одежда' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Детская одежда' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для всей семьи' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Верхняя одежда' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для будущих мам' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Подарки' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Продукты питания' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для спорта' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для дома' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для детей' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для здоровья, оптика' LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Ювелирные изделия, часы' LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Хобби и увлечения' LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (9.1ms)
+Completed 200 OK in 4254ms (Views: 10.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 02:15:52 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.4ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+Completed 500 Internal Server Error in 5519ms
+
+Nokogiri::CSS::SyntaxError (unexpected '$' after '#<Nokogiri::CSS::Node:0x9bc22b8>'):
+  lib/parser/parser.rb:21:in `block in update_category'
+  lib/parser/parser.rb:20:in `update_category'
+  app/controllers/parser_controller.rb:8:in `status'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 02:16:52 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (129.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:16:58 UTC +00:00], ["store_id", 1], ["title", ""], ["updated_at", Thu, 02 May 2013 22:16:58 UTC +00:00]]
+  [1m[36m (206.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Женская одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:16:59 UTC +00:00], ["store_id", 1], ["title", "Женская одежда"], ["updated_at", Thu, 02 May 2013 22:16:59 UTC +00:00]]
+  [1m[36m (192.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Аксессуары' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:16:59 UTC +00:00], ["store_id", 1], ["title", "Аксессуары"], ["updated_at", Thu, 02 May 2013 22:16:59 UTC +00:00]]
+  [1m[36m (149.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Бельё' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:16:59 UTC +00:00], ["store_id", 1], ["title", "Бельё"], ["updated_at", Thu, 02 May 2013 22:16:59 UTC +00:00]]
+  [1m[36m (184.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Кожгалантерея, сумки.' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:16:59 UTC +00:00], ["store_id", 1], ["title", "Кожгалантерея, сумки."], ["updated_at", Thu, 02 May 2013 22:16:59 UTC +00:00]]
+  [1m[36m (149.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Косметика и парфюмерия' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:16:59 UTC +00:00], ["store_id", 1], ["title", "Косметика и парфюмерия"], ["updated_at", Thu, 02 May 2013 22:16:59 UTC +00:00]]
+  [1m[36m (227.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мебель, товары для дома' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:00 UTC +00:00], ["store_id", 1], ["title", "Мебель, товары для дома"], ["updated_at", Thu, 02 May 2013 22:17:00 UTC +00:00]]
+  [1m[36m (115.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мультимедия, цифровая и бытовая техника' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:00 UTC +00:00], ["store_id", 1], ["title", "Мультимедия, цифровая и бытовая техника"], ["updated_at", Thu, 02 May 2013 22:17:00 UTC +00:00]]
+  [1m[36m (138.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Обувь' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:00 UTC +00:00], ["store_id", 1], ["title", "Обувь"], ["updated_at", Thu, 02 May 2013 22:17:00 UTC +00:00]]
+  [1m[36m (151.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мужская одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:00 UTC +00:00], ["store_id", 1], ["title", "Мужская одежда"], ["updated_at", Thu, 02 May 2013 22:17:00 UTC +00:00]]
+  [1m[36m (126.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Детская одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:00 UTC +00:00], ["store_id", 1], ["title", "Детская одежда"], ["updated_at", Thu, 02 May 2013 22:17:00 UTC +00:00]]
+  [1m[36m (186.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для всей семьи' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:00 UTC +00:00], ["store_id", 1], ["title", "Одежда для всей семьи"], ["updated_at", Thu, 02 May 2013 22:17:00 UTC +00:00]]
+  [1m[36m (131.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Верхняя одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:01 UTC +00:00], ["store_id", 1], ["title", "Верхняя одежда"], ["updated_at", Thu, 02 May 2013 22:17:01 UTC +00:00]]
+  [1m[36m (184.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для будущих мам' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:01 UTC +00:00], ["store_id", 1], ["title", "Одежда для будущих мам"], ["updated_at", Thu, 02 May 2013 22:17:01 UTC +00:00]]
+  [1m[36m (171.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Подарки' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:01 UTC +00:00], ["store_id", 1], ["title", "Подарки"], ["updated_at", Thu, 02 May 2013 22:17:01 UTC +00:00]]
+  [1m[36m (174.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Продукты питания' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:01 UTC +00:00], ["store_id", 1], ["title", "Продукты питания"], ["updated_at", Thu, 02 May 2013 22:17:01 UTC +00:00]]
+  [1m[36m (189.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для спорта' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:01 UTC +00:00], ["store_id", 1], ["title", "Товары для спорта"], ["updated_at", Thu, 02 May 2013 22:17:01 UTC +00:00]]
+  [1m[36m (439.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для дома' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:02 UTC +00:00], ["store_id", 1], ["title", "Товары для дома"], ["updated_at", Thu, 02 May 2013 22:17:02 UTC +00:00]]
+  [1m[36m (333.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для детей' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:02 UTC +00:00], ["store_id", 1], ["title", "Товары для детей"], ["updated_at", Thu, 02 May 2013 22:17:02 UTC +00:00]]
+  [1m[36m (721.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для здоровья, оптика' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:03 UTC +00:00], ["store_id", 1], ["title", "Товары для здоровья, оптика"], ["updated_at", Thu, 02 May 2013 22:17:03 UTC +00:00]]
+  [1m[36m (329.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Ювелирные изделия, часы' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:03 UTC +00:00], ["store_id", 1], ["title", "Ювелирные изделия, часы"], ["updated_at", Thu, 02 May 2013 22:17:03 UTC +00:00]]
+  [1m[36m (159.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Хобби и увлечения' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:17:03 UTC +00:00], ["store_id", 1], ["title", "Хобби и увлечения"], ["updated_at", Thu, 02 May 2013 22:17:03 UTC +00:00]]
+  [1m[36m (172.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (1.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (20.1ms)
+Completed 200 OK in 10999ms (Views: 118.1ms | ActiveRecord: 5004.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 02:18:17 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+Completed 500 Internal Server Error in 5091ms
+
+Nokogiri::CSS::SyntaxError (unexpected '[' after ':not('):
+  lib/parser/parser.rb:21:in `block in update_category'
+  lib/parser/parser.rb:20:in `update_category'
+  app/controllers/parser_controller.rb:8:in `status'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-03 02:20:07 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" LIMIT 1[0m
+  [1m[35mCategory Load (132.8ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (103.4ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:12 UTC +00:00], ["store_id", 1], ["title", ""], ["updated_at", Thu, 02 May 2013 22:20:12 UTC +00:00]]
+  [1m[36m (187.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Женская одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:12 UTC +00:00], ["store_id", 1], ["title", "Женская одежда"], ["updated_at", Thu, 02 May 2013 22:20:12 UTC +00:00]]
+  [1m[36m (293.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Аксессуары' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:12 UTC +00:00], ["store_id", 1], ["title", "Аксессуары"], ["updated_at", Thu, 02 May 2013 22:20:12 UTC +00:00]]
+  [1m[36m (137.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Бельё' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:13 UTC +00:00], ["store_id", 1], ["title", "Бельё"], ["updated_at", Thu, 02 May 2013 22:20:13 UTC +00:00]]
+  [1m[36m (160.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Кожгалантерея, сумки.' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:13 UTC +00:00], ["store_id", 1], ["title", "Кожгалантерея, сумки."], ["updated_at", Thu, 02 May 2013 22:20:13 UTC +00:00]]
+  [1m[36m (149.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Косметика и парфюмерия' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:13 UTC +00:00], ["store_id", 1], ["title", "Косметика и парфюмерия"], ["updated_at", Thu, 02 May 2013 22:20:13 UTC +00:00]]
+  [1m[36m (184.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мебель, товары для дома' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:13 UTC +00:00], ["store_id", 1], ["title", "Мебель, товары для дома"], ["updated_at", Thu, 02 May 2013 22:20:13 UTC +00:00]]
+  [1m[36m (149.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мультимедия, цифровая и бытовая техника' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:13 UTC +00:00], ["store_id", 1], ["title", "Мультимедия, цифровая и бытовая техника"], ["updated_at", Thu, 02 May 2013 22:20:13 UTC +00:00]]
+  [1m[36m (115.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Обувь' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:13 UTC +00:00], ["store_id", 1], ["title", "Обувь"], ["updated_at", Thu, 02 May 2013 22:20:13 UTC +00:00]]
+  [1m[36m (183.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (2.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Мужская одежда' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:14 UTC +00:00], ["store_id", 1], ["title", "Мужская одежда"], ["updated_at", Thu, 02 May 2013 22:20:14 UTC +00:00]]
+  [1m[36m (158.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Детская одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:14 UTC +00:00], ["store_id", 1], ["title", "Детская одежда"], ["updated_at", Thu, 02 May 2013 22:20:14 UTC +00:00]]
+  [1m[36m (194.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для всей семьи' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:14 UTC +00:00], ["store_id", 1], ["title", "Одежда для всей семьи"], ["updated_at", Thu, 02 May 2013 22:20:14 UTC +00:00]]
+  [1m[36m (124.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Верхняя одежда' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:14 UTC +00:00], ["store_id", 1], ["title", "Верхняя одежда"], ["updated_at", Thu, 02 May 2013 22:20:14 UTC +00:00]]
+  [1m[36m (126.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Одежда для будущих мам' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:14 UTC +00:00], ["store_id", 1], ["title", "Одежда для будущих мам"], ["updated_at", Thu, 02 May 2013 22:20:14 UTC +00:00]]
+  [1m[36m (173.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Подарки' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:14 UTC +00:00], ["store_id", 1], ["title", "Подарки"], ["updated_at", Thu, 02 May 2013 22:20:14 UTC +00:00]]
+  [1m[36m (149.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Продукты питания' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:14 UTC +00:00], ["store_id", 1], ["title", "Продукты питания"], ["updated_at", Thu, 02 May 2013 22:20:14 UTC +00:00]]
+  [1m[36m (152.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для спорта' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:15 UTC +00:00], ["store_id", 1], ["title", "Товары для спорта"], ["updated_at", Thu, 02 May 2013 22:20:15 UTC +00:00]]
+  [1m[36m (137.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для дома' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:15 UTC +00:00], ["store_id", 1], ["title", "Товары для дома"], ["updated_at", Thu, 02 May 2013 22:20:15 UTC +00:00]]
+  [1m[36m (160.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для детей' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:15 UTC +00:00], ["store_id", 1], ["title", "Товары для детей"], ["updated_at", Thu, 02 May 2013 22:20:15 UTC +00:00]]
+  [1m[36m (158.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Товары для здоровья, оптика' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:15 UTC +00:00], ["store_id", 1], ["title", "Товары для здоровья, оптика"], ["updated_at", Thu, 02 May 2013 22:20:15 UTC +00:00]]
+  [1m[36m (170.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Ювелирные изделия, часы' LIMIT 1
+  [1m[36m (2.9ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:15 UTC +00:00], ["store_id", 1], ["title", "Ювелирные изделия, часы"], ["updated_at", Thu, 02 May 2013 22:20:15 UTC +00:00]]
+  [1m[36m (147.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1 AND "categories"."title" = 'Хобби и увлечения' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "categories" ("created_at", "store_id", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 02 May 2013 22:20:15 UTC +00:00], ["store_id", 1], ["title", "Хобби и увлечения"], ["updated_at", Thu, 02 May 2013 22:20:15 UTC +00:00]]
+  [1m[36m (137.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."store_id" = 1
+  Rendered parser/status.html.haml within layouts/main (17.0ms)
+Completed 200 OK in 7749ms (Views: 154.4ms | ActiveRecord: 3836.0ms)
