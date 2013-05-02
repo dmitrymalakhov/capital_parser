@@ -10,9 +10,9 @@ categories.each do |category|
 	title = category.css("li.cell_standart_struct1 .menuchilds").text
 	puts "#{title} ---->"
 
-	pavilions = category.css("a:not([href*='plan'])")
+	# pavilions = category.css("a:not([href*='plan'])")
 
-	pavilions.each do |pavilion|
-		puts "#{pavilion.text} - #{pavilion['href']}"
-	end
+	# pavilions.each do |pavilion|
+	# 	puts "#{pavilion.text} - #{pavilion['href']}"
+	# end
 end

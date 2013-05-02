@@ -18,7 +18,7 @@ class Parser
 		categories = doc.css("ul.cell_standart_struct1");
 
 		categories.each do |category|
-			title = category.css("li.cell_standart_struct1 .menuchilds").text
+			title = category.css("li.cell_standart_struct1 span.menuchilds").text
 			@store.category.where(:title => title).first_or_create		
 		end
 
