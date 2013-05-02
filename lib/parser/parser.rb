@@ -1,22 +1,23 @@
 require 'open-uri'
 
 class Parser
-	def initialize()
-		@doc = Nokogiri::HTML(open("http://www.respublika-nn.ru/?id=202"))
+	def initialize(store)
+		@store = store
 	end
 
 	def get_status()
-		return "OK2"
+		return "OK"
 	end
 
 	def get_category()
-
-		categories = @doc.css("ul.cell_standart_struct1");
+		doc = Nokogiri::HTML(open("#{@store.base_url}#{@store.pavilion}"))
+		categories = doc.css("ul.cell_standart_struct1");
 
 		categories.each do |category|
 			title = category.css("li.cell_standart_struct1 .menuchilds").text
+			# Category.create(:title => title.text, :store_id => store.id)
 		end
 
-		return categories.text
+		return "OK"
 	end
 end
