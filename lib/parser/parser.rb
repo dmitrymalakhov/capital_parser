@@ -15,7 +15,7 @@ class Parser
 
 	def update_category()
 		doc = Nokogiri::HTML(open("#{@store.base_url}#{@store.pavilion_url}"))
-		categories = doc.css("ul.cell_standart_struct1");
+		categories = doc.css("ul.cell_standart_struct1:has(.cell_standart_struct1 span)");
 
 		categories.each do |category|
 			title = category.css("li.cell_standart_struct1 span.menuchilds").text

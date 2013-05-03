@@ -1,14 +1,14 @@
 require 'open-uri'
 require 'nokogiri'
 
-doc = Nokogiri::HTML(open("http://www.respublika-nn.ru/?id=202"))
+doc = Nokogiri::HTML(open("http://www.fantastika-nn.ru/?id=218"))
 
 #pavilions = doc.css(".list_table_cols a:not([href*='plan'])");
-categories = doc.css("ul.cell_standart_struct1");
+categories = doc.css("ul.cell_standart_struct1:has(.cell_standart_struct1 span)");
 
 categories.each do |category|
-	title = category.css("li.cell_standart_struct1 .menuchilds").text
-	puts "#{title} ---->"
+	title = category.css("li.cell_standart_struct1 span.menuchilds").text
+	puts "[#{title}]"
 
 	# pavilions = category.css("a:not([href*='plan'])")
 
