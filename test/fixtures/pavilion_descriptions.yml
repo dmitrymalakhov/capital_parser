@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  logo: MyString
+  content: MyText
+  floor: MyString
+  site: MyString
+  pavilion: 
+
+two:
+  logo: MyString
+  content: MyText
+  floor: MyString
+  site: MyString
+  pavilion: 

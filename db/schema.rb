@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504120512) do
+ActiveRecord::Schema.define(:version => 20130508071339) do
 
-  create_table "brand_names", :force => true do |t|
+  create_table "brands", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -28,15 +28,38 @@ ActiveRecord::Schema.define(:version => 20130504120512) do
 
   add_index "categories", ["store_id"], :name => "index_categories_on_store_id"
 
-  create_table "pavilions", :force => true do |t|
-    t.integer  "category_id"
-    t.integer  "brand_name_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+  create_table "pavilion_descriptions", :force => true do |t|
+    t.string   "logo"
+    t.text     "content"
+    t.string   "floor"
+    t.string   "site"
+    t.integer  "pavilion_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "pavilions", ["brand_name_id"], :name => "index_pavilions_on_brand_name_id"
+  add_index "pavilion_descriptions", ["pavilion_id"], :name => "index_pavilion_descriptions_on_pavilion_id"
+
+  create_table "pavilion_galleries", :force => true do |t|
+    t.string   "image"
+    t.integer  "pavilion_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "pavilion_galleries", ["pavilion_id"], :name => "index_pavilion_galleries_on_pavilion_id"
+
+  create_table "pavilions", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "brand_id"
+    t.integer  "pavilion_description_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "pavilions", ["brand_id"], :name => "index_pavilions_on_brand_id"
   add_index "pavilions", ["category_id"], :name => "index_pavilions_on_category_id"
+  add_index "pavilions", ["pavilion_description_id"], :name => "index_pavilions_on_pavilion_description_id"
 
   create_table "stores", :force => true do |t|
     t.string   "title"
