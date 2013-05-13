@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20130509214013) do
   create_table "pavilion_descriptions", :force => true do |t|
     t.string   "logo"
     t.text     "content"
-    t.integer  "floor"
+    t.string   "floor"
     t.string   "site"
     t.string   "phone"
     t.integer  "pavilion_id"
