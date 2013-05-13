@@ -9,15 +9,22 @@ class Parser
 	def get_status()
 		return "OK"
 	end
-	def get_pavilion_by_store()
-		@store.pavilions
-	end
-	def get_category()
+	
+	def get_categories()
 		@store.categories
 	end
 
+	def get_pavilions_by_store()
+		@store.pavilions
+	end
+	def get_pavilions_by_category(category)
+		category.pavilions
+	end
 	def get_brands_by_category(category)
 		category.brands
+	end
+	def get_description_by_pavilion(pavilion)
+		pavilion.pavilion_description
 	end
 
 	def update_category()

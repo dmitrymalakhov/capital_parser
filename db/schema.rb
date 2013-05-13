@@ -68,14 +68,12 @@ ActiveRecord::Schema.define(:version => 20130509214013) do
   create_table "pavilions", :force => true do |t|
     t.integer  "category_id"
     t.integer  "brand_id"
-    t.integer  "pavilion_description_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "pavilions", ["brand_id"], :name => "index_pavilions_on_brand_id"
   add_index "pavilions", ["category_id"], :name => "index_pavilions_on_category_id"
-  add_index "pavilions", ["pavilion_description_id"], :name => "index_pavilions_on_pavilion_description_id"
 
   create_table "stores", :force => true do |t|
     t.string   "title"
