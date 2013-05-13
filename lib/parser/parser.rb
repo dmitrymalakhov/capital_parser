@@ -28,14 +28,7 @@ class Parser
 	end
 
 	def update_category()
-		begin
-			doc = Nokogiri::HTML(open("#{@store.base_url}#{@store.pavilion_url}"))
-		rescue Timeout::Error
-			result = false
-			puts "repeat query....."
-		else
-			result = true
-		end while !result
+		doc = get_document("#{@store.base_url}#{@store.pavilion_url}")
 
 		categories = doc.css("ul.cell_standart_struct1:has(.cell_standart_struct1 span)")
 		category = categories.first
@@ -54,14 +47,7 @@ class Parser
 	end
 
 	def update_pavilion_description(pavilion_obj, description_url)
-		begin
-			doc = Nokogiri::HTML(open("#{@store.base_url}#{description_url}"))
-		rescue Timeout::Error
-			result = false
-			puts "repeat query....."
-		else
-			result = true
-		end while !result
+		doc = get_document("#{@store.base_url}#{description_url}")		
 
 		puts "#{@store.base_url}#{description_url}"
 		doc.xpath('//@style').remove
@@ -80,14 +66,26 @@ class Parser
 					phone = info.css("td:last").text
 				when /Принимаем к оплате/
 					info.css("td:last .mag_disc img").each do |card|
-						image = /.*\//.match card.xpath('@src').text
+						image = card.xpath('@src').text
 						name = card.xpath('@title').text
 
-						credit = Credit.where(:image => image[0], :name => name).first_or_create
+						credit = Credit.where(:image => image, :name => name).first_or_create
 						if !pavilion_obj.credits.include?(credit)
 							pavilion_obj.credits << credit
 						end
 					end
+				when /Скидки по картам/
+					info.css("td:last").each do |card|
+						image = card.css(".mag_disc img").xpath('@src').text
+						name = card.css(".mag_disc img").xpath('@title').text
+						percentage = /\d/.match card.css(".mag_disc_pro").text #спросить у Димы как выделить скидку
+
+						discount = Discount.where(:image => image, :percentage => percentage[0],:name => name).first_or_create
+						if !pavilion_obj.discounts.include?(discount)
+							pavilion_obj.discounts << discount
+						end
+					end
+
 			end
 		end
 
@@ -101,6 +99,20 @@ class Parser
 			image = /.*\//.match slide.xpath('@src').text
 			pavilion_obj.pavilion_gallery.where(:image => image[0]).first_or_create
 		end
+	end
 
+	private 
+
+	def get_document(path)
+		begin
+			doc = Nokogiri::HTML(open(path))
+		rescue Timeout::Error
+			result = false
+			puts "repeat query....."
+		else
+			result = true
+		end while !result
+
+		return doc
 	end
 end
