@@ -3,8 +3,9 @@ class CreatePavilionDescriptions < ActiveRecord::Migration
     create_table :pavilion_descriptions do |t|
       t.string :logo
       t.text :content
-      t.string :floor
+      t.integer :floor
       t.string :site
+      t.string :phone
       t.references :pavilion
       t.timestamps
     end

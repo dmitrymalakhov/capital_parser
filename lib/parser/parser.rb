@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'open-uri'
 
 class Parser
@@ -44,23 +45,36 @@ class Parser
 		pavilion = doc.css(".article .block_is")
 		
 		logo = pavilion.css("img.icon_standart").xpath('@src').text
-		common = pavilion.css(".mag_is a")
-		if !common[0].nil?
-			floor = common[0].text
-		end
-		if !common[1].nil?
-			site = common[1].xpath('@href').text
+		
+		doc.css(".mag_is tr").each do |info|
+			case info.css("td:first").text
+				when /Расположение/
+					floor = info.css("td:last").text.scan(/\d/)
+				when /Веб-сайт/
+					site = info.css("td:last a").xpath('@href').text
+				when /Телефон/
+					phone = info.css("td:last").text
+				when /Принимаем к оплате/
+					info.css("td:last .mag_disc img").each do |card|
+						image = /.*\//.match card.xpath('@src').text
+						name = card.xpath('title').text
+						
+						credit = Credit.where(:image => image[0], :name => name).first_or_create						
+						if !pavilion_obj.credits.include?(credit)
+							pavilion_obj.credits << credit
+						end
+					end
+			end
 		end
 
 		if pavilion_obj.pavilion_description.nil?  
 			pavilion_obj.pavilion_description = PavilionDescription.new()
 		end
 
-		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :floor => floor, :site => site)
+		# pavilion_obj.pavilion_description.update_attributes(:logo => logo, :floor => floor, :site => site, :phone => phone)
 
-		galery = doc.css(".highslide-gallery")
-		galery.css("a.highslide").each do |slide|
-			image = /.*\//.match slide.css("img").xpath('@src').text
+		doc.css(".highslide-gallery a.highslide img").each do |slide|
+			image = /.*\//.match slide.xpath('@src').text
 			pavilion_obj.pavilion_gallery.where(:image => image[0]).first_or_create
 		end
 

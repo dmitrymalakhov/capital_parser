@@ -1,12 +1,24 @@
+# encoding: utf-8
 require 'open-uri'
 require 'nokogiri'
 
-doc = Nokogiri::HTML(open("http://www.fantastika-nn.ru/?id=14121"))
+doc = Nokogiri::HTML(open("http://www.fantastika-nn.ru/Accessorize"))
 
 doc.xpath('//@style').remove
 
 # pavilion = doc.css(".article .block_is")
 galery = doc.css(".highslide-gallery")
+
+# doc.css(".mag_is tr").each do |info|
+# 	case info.css("td:first").text
+# 		when /Расположение/
+# 			puts info.css("td:last").text.scan(/\d/)
+# 		when /Веб-сайт/
+# 			puts info.css("td:last a").xpath('@href')
+# 		when /Телефон/
+# 			puts info.css("td:last").text
+# 	end
+# end
 
 # title = pavilion.css(".header").text
 # floor = pavilion.css(".mag_is a")
@@ -22,6 +34,6 @@ galery = doc.css(".highslide-gallery")
 # content = pavilion
 
 galery.css("a.highslide").each do |slide|
-	a = /.*\//.match slide.css("img").xpath('@src').text
-	puts "#{a[0]}"
+	image = /.*\//.match slide.css("img").xpath('@src').text
+	puts image[0]
 end
