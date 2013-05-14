@@ -27,6 +27,17 @@ class Parser
 		pavilion.pavilion_description
 	end
 
+	def update_news()
+		doc = get_document("#{@store.base_url}#{@store.news_url}")
+
+		doc.css(".article tr.cell_standart_icon .view_icon_div a.menuchilds").each do |news|
+			title = news.css("img").xpath('@title').text
+			article = get_document("#{@store.base_url}#{news.xpath('@href').text}")
+			date = article.css(".header .date").text
+			@store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
+		end
+	end
+
 	def update_category()
 		doc = get_document("#{@store.base_url}#{@store.pavilion_url}")
 
@@ -78,9 +89,9 @@ class Parser
 					info.css("td:last").each do |card|
 						image = card.css(".mag_disc img").xpath('@src').text
 						name = card.css(".mag_disc img").xpath('@title').text
-						percentage = /\d/.match card.css(".mag_disc_pro").text #спросить у Димы как выделить скидку
+						percentage = /.*?([\d]+).*/.match card.css(".mag_disc_pro").text #спросить у Димы как выделить скидку
 
-						discount = Discount.where(:image => image, :percentage => percentage[0],:name => name).first_or_create
+						discount = Discount.where(:image => image, :percentage => percentage[1],:name => name).first_or_create
 						if !pavilion_obj.discounts.include?(discount)
 							pavilion_obj.discounts << discount
 						end

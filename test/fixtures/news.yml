@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  date_publication: MyString
+  pavilion: 
+
+two:
+  title: MyString
+  date_publication: MyString
+  pavilion: 
