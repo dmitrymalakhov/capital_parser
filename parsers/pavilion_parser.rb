@@ -7,7 +7,7 @@ doc = Nokogiri::HTML(open("http://www.fantastika-nn.ru/Accessorize"))
 doc.xpath('//@style').remove
 
 # pavilion = doc.css(".article .block_is")
-galery = doc.css(".highslide-gallery")
+# galery = doc.css(".highslide-gallery")
 
 # doc.css(".mag_is tr").each do |info|
 # 	case info.css("td:first").text
@@ -33,7 +33,7 @@ galery = doc.css(".highslide-gallery")
 # pavilion.xpath("//img").remove
 # content = pavilion
 
-galery.css("a.highslide").each do |slide|
-	image = /.*\//.match slide.css("img").xpath('@src').text
-	puts image[0]
-end
+# galery.css("a.highslide").each do |slide|
+# 	image = /.*\//.match slide.css("img").xpath('@src').text
+# 	puts image[0]
+# end

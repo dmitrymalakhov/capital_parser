@@ -27,34 +27,54 @@ class Parser
 		pavilion.pavilion_description
 	end
 
+	def get_news() 
+		@store.news
+	end
+
 	def update_news()
 		doc = get_document("#{@store.base_url}#{@store.news_url}")
 
 		doc.css(".article tr.cell_standart_icon .view_icon_div a.menuchilds").each do |news|
 			title = news.css("img").xpath('@title').text
 			article = get_document("#{@store.base_url}#{news.xpath('@href').text}")
-			date = article.css(".header .date").text
-			@store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
+			content = article.css("tr.article .block_is")
+
+			date = content.css(".header .date").text
+			news_obj = @store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
+
+			content.css(".mess_standart img").each do |img|
+				src = img.xpath('@src').text
+				news_obj.news_gallery.where(:image => src).first_or_create
+			end
+			content.css('.mess_standart').search('img, hr').remove
+
+			news_obj.update_attributes(:content => content.css('.mess_standart').text)
+
 		end
 	end
 
-	def update_category()
-		doc = get_document("#{@store.base_url}#{@store.pavilion_url}")
-
+	def update_category(type)
+		case type
+			when 'pavilions'
+				doc = get_document("#{@store.base_url}#{@store.pavilion_url}")
+			when 'services'
+				doc = get_document("#{@store.base_url}#{@store.services_url}")
+		end
+		
 		categories = doc.css("ul.cell_standart_struct1:has(.cell_standart_struct1 span)")
-		category = categories.first
-		# categories.each do |category|
+		# category = categories.first
+		categories.each do |category|
 			title = category.css("li.cell_standart_struct1 span.menuchilds").text
 		    category_obj = @store.categories.where(:title => title).first_or_create
 
 			pavilions = category.css("a:not([href*='plan'])")
-			pavilion = pavilions.first
-			# pavilions.each do |pavilion|
+			# pavilion = pavilions.first
+			pavilions.each do |pavilion|
 				brand_obj = Brand.where(:title => pavilion.text).first_or_create
 				pavilion_obj = category_obj.pavilions.where(:brand_id => brand_obj.id).first_or_create
 				update_pavilion_description(pavilion_obj, pavilion['href'])
-			# end
-		# end
+			end
+		end
 	end
 
 	def update_pavilion_description(pavilion_obj, description_url)
@@ -63,9 +83,14 @@ class Parser
 		puts "#{@store.base_url}#{description_url}"
 		doc.xpath('//@style').remove
 		pavilion = doc.css(".article .block_is")
-
+		content = pavilion.css(".mess_standart")
 		logo = pavilion.css("img.icon_standart").xpath('@src').text
 		floor, site, phone = "", "", ""
+		
+		doc.css(".highslide-gallery a.highslide img").each do |slide|
+			image = /.*\//.match slide.xpath('@src').text
+			pavilion_obj.pavilion_gallery.where(:image => image[0]).first_or_create
+		end
 
 		doc.css(".mag_is tr").each do |info|
 			case info.css("td:first").text
@@ -96,7 +121,6 @@ class Parser
 							pavilion_obj.discounts << discount
 						end
 					end
-
 			end
 		end
 
@@ -104,12 +128,13 @@ class Parser
 			pavilion_obj.pavilion_description = PavilionDescription.new()
 		end
 
-		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :floor => floor[0], :site => site, :phone => phone)
+		content.search('img').remove
+		content.css('.h-mag_is').remove
 
-		doc.css(".highslide-gallery a.highslide img").each do |slide|
-			image = /.*\//.match slide.xpath('@src').text
-			pavilion_obj.pavilion_gallery.where(:image => image[0]).first_or_create
-		end
+
+		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor[0], :site => site, :phone => phone)
+
+		
 	end
 
 	private 
@@ -117,6 +142,8 @@ class Parser
 	def get_document(path)
 		begin
 			doc = Nokogiri::HTML(open(path))
+			doc.xpath('//@style').remove
+			doc.search('script').remove
 		rescue Timeout::Error
 			result = false
 			puts "repeat query....."

@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-doc = Nokogiri::HTML(open("http://www.fantastika-nn.ru/?id=218"))
+doc = Nokogiri::HTML(open("http://fantastika-nn.ru/?id=240"))
 
 #pavilions = doc.css(".list_table_cols a:not([href*='plan'])");
 categories = doc.css("ul.cell_standart_struct1:has(.cell_standart_struct1 span)");

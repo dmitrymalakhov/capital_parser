@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514060535) do
+ActiveRecord::Schema.define(:version => 20130515060151) do
 
   create_table "brands", :force => true do |t|
     t.string   "title"
@@ -62,12 +62,22 @@ ActiveRecord::Schema.define(:version => 20130514060535) do
   create_table "news", :force => true do |t|
     t.string   "title"
     t.string   "date_publication"
+    t.text     "content"
     t.integer  "store_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
 
   add_index "news", ["store_id"], :name => "index_news_on_store_id"
+
+  create_table "news_galleries", :force => true do |t|
+    t.string   "image"
+    t.integer  "news_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "news_galleries", ["news_id"], :name => "index_news_galleries_on_news_id"
 
   create_table "pavilion_descriptions", :force => true do |t|
     t.string   "logo"
@@ -105,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20130514060535) do
     t.string   "title"
     t.string   "base_url"
     t.string   "pavilion_url"
+    t.string   "services_url"
     t.string   "news_url"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

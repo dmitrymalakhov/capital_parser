@@ -1,4 +1,5 @@
 class News < ActiveRecord::Base
   belongs_to :store
-  attr_accessible :date_publication, :title
+  has_many :news_gallery
+  attr_accessible :date_publication, :title, :content
 end
