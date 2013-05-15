@@ -9,7 +9,7 @@ class Parser
 	def get_status()
 		return "OK"
 	end
-	
+
 	def get_categories()
 		@store.categories
 	end
@@ -27,7 +27,7 @@ class Parser
 		pavilion.pavilion_description
 	end
 
-	def get_news() 
+	def get_news()
 		@store.news
 	end
 
@@ -60,7 +60,7 @@ class Parser
 			when 'services'
 				doc = get_document("#{@store.base_url}#{@store.services_url}")
 		end
-		
+
 		categories = doc.css("ul.cell_standart_struct1:has(.cell_standart_struct1 span)")
 		# category = categories.first
 		categories.each do |category|
@@ -78,7 +78,7 @@ class Parser
 	end
 
 	def update_pavilion_description(pavilion_obj, description_url)
-		doc = get_document("#{@store.base_url}#{description_url}")		
+		doc = get_document("#{@store.base_url}#{description_url}")
 
 		puts "#{@store.base_url}#{description_url}"
 		doc.xpath('//@style').remove
@@ -86,7 +86,7 @@ class Parser
 		content = pavilion.css(".mess_standart")
 		logo = pavilion.css("img.icon_standart").xpath('@src').text
 		floor, site, phone = "", "", ""
-		
+
 		doc.css(".highslide-gallery a.highslide img").each do |slide|
 			image = /.*\//.match slide.xpath('@src').text
 			pavilion_obj.pavilion_gallery.where(:image => image[0]).first_or_create
@@ -95,7 +95,10 @@ class Parser
 		doc.css(".mag_is tr").each do |info|
 			case info.css("td:first").text
 				when /Расположение/
-					floor = /\d/.match info.css("td:last").text
+					temp = /\d/.match info.css("td:last").text
+					if !temp.nil?
+						floor = temp[0]
+					end
 				when /Веб-сайт/
 					site = info.css("td:last a").xpath('@href').text
 				when /Телефон/
@@ -114,9 +117,13 @@ class Parser
 					info.css("td:last").each do |card|
 						image = card.css(".mag_disc img").xpath('@src').text
 						name = card.css(".mag_disc img").xpath('@title').text
-						percentage = /.*?([\d]+).*/.match card.css(".mag_disc_pro").text #спросить у Димы как выделить скидку
 
-						discount = Discount.where(:image => image, :percentage => percentage[1],:name => name).first_or_create
+							temp = /.*?([\d]+).*/.match card.css(".mag_disc_pro").text #Проверить существование
+							if !temp.nil?
+								percentage = temp[1]
+							end
+
+						discount = Discount.where(:image => image, :percentage => percentage, :name => name).first_or_create
 						if !pavilion_obj.discounts.include?(discount)
 							pavilion_obj.discounts << discount
 						end
@@ -132,12 +139,12 @@ class Parser
 		content.css('.h-mag_is').remove
 
 
-		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor[0], :site => site, :phone => phone)
+		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone)
 
-		
+
 	end
 
-	private 
+	private
 
 	def get_document(path)
 		begin
