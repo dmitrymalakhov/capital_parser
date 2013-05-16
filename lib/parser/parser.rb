@@ -37,7 +37,7 @@ class Parser
 		doc.css(".article tr.cell_standart_icon .view_icon_div a.menuchilds").each do |news|
 			title = news.css("img").xpath('@title').text
 			article = get_document("#{@store.base_url}#{news.xpath('@href').text}")
-			content = article.css(".block_is")
+			content = article.css(".article .block_is")
 
 			date = content.css(".header .date").text
 			news_obj = @store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
@@ -47,6 +47,7 @@ class Parser
 				news_obj.news_gallery.where(:image => src).first_or_create
 			end
 			content.css('.mess_standart').search('img, hr').remove
+			content.css('.header').remove
 
 			news_obj.update_attributes(:content => content.css('.mess_standart').text)
 
@@ -58,7 +59,12 @@ class Parser
 			when 'pavilions'
 				doc = get_document("#{@store.base_url}#{@store.pavilion_url}")
 			when 'services'
-				doc = get_document("#{@store.base_url}#{@store.services_url}")
+				if !@store.services_url.nil?
+					doc = get_document("#{@store.base_url}#{@store.services_url}")
+				else
+					return
+				end
+
 		end
 		doc.search("ul:has(li a[href*='plan'])").remove
 		categories = doc.css("ul.cell_standart_struct1");
@@ -95,16 +101,16 @@ class Parser
 
 		doc.css(".mag_is tr").each do |info|
 			case info.css("td:first").text
-				when /Расположение/
+				when /расположение/i, /этаж/i
 					temp = /\d/.match info.css("td:last").text
 					if !temp.nil?
 						floor = temp[0]
 					end
-				when /Веб-сайт/
+				when /сайт/i
 					site = info.css("td:last a").xpath('@href').text
-				when /Телефон/
+				when /телефон/i
 					phone = info.css("td:last").text
-				when /Принимаем к оплате/
+				when /принимаем к оплате/i
 					info.css("td:last .mag_disc img").each do |card|
 						image = card.xpath('@src').text
 						name = card.xpath('@title').text
@@ -114,16 +120,21 @@ class Parser
 							pavilion_obj.credits << credit
 						end
 					end
-				when /Скидки по картам/
-					info.css("td:last").each do |card|
-						image = card.css(".mag_disc img").xpath('@src').text
-						name = card.css(".mag_disc img").xpath('@title').text
+				when /скидки по картам/i, /дисконтные карты/i
+					cards_type = info.css("td:last .mag_disc img")
+					cards_discount = info.css("td:last .mag_disc_pro")
+					
+					cards = cards_type.zip(cards_discount)
 
-							temp = /.*?([\d]+).*/.match card.css(".mag_disc_pro").text #Проверить существование
-							if !temp.nil?
-								percentage = temp[1]
-							end
+					cards.each do |card|
+						image = card.first.xpath('@src').text
+						name = card.first.xpath('@title').text
 
+						temp = /.*?([\d]+).*/.match card.last.text
+						if !temp.nil?
+							percentage = temp[1]
+						end
+						
 						discount = Discount.where(:image => image, :percentage => percentage, :name => name).first_or_create
 						if !pavilion_obj.discounts.include?(discount)
 							pavilion_obj.discounts << discount
@@ -138,11 +149,11 @@ class Parser
 
 		content.search('img').remove
 		content.css('.h-mag_is').remove
+		content.css('.mag_is').remove
+		
 
 
 		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone)
-
-
 	end
 
 	private

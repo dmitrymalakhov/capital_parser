@@ -2,7 +2,8 @@ require 'open-uri'
 require 'nokogiri'
 
 # doc = Nokogiri::HTML(open("http://fantastika-nn.ru/?id=240"))
-doc = Nokogiri::HTML(open("http://7nebonnov.ru/?id=227"))
+doc = Nokogiri::HTML(open("http://www.respublika-nn.ru/?id=202"))
+# doc = Nokogiri::HTML(open("http://7nebonnov.ru/?id=227"))
 
 #pavilions = doc.css(".list_table_cols a:not([href*='plan'])");
 # doc.css("td.list_table_cols_one:has(ul li a[href*='plan'])").remove
