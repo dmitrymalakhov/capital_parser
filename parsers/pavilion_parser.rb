@@ -2,38 +2,54 @@
 require 'open-uri'
 require 'nokogiri'
 
-doc = Nokogiri::HTML(open("http://www.fantastika-nn.ru/Accessorize"))
+# doc = Nokogiri::HTML(open("http://www.fantastika-nn.ru/Accessorize"))
+doc = Nokogiri::HTML(open("http://7nebonnov.ru/?id=694"))
 
 doc.xpath('//@style').remove
 
-# pavilion = doc.css(".article .block_is")
-# galery = doc.css(".highslide-gallery")
+pavilion = doc.css(".article .block_is")
+content = pavilion.css(".mess_standart")
+logo = pavilion.css("img.icon_standart").xpath('@src').text
+floor, site, phone = "", "", ""
 
-# doc.css(".mag_is tr").each do |info|
-# 	case info.css("td:first").text
-# 		when /Расположение/
-# 			puts info.css("td:last").text.scan(/\d/)
-# 		when /Веб-сайт/
-# 			puts info.css("td:last a").xpath('@href')
-# 		when /Телефон/
-# 			puts info.css("td:last").text
-# 	end
-# end
+doc.css(".highslide-gallery a.highslide img").each do |slide|
+	image = /.*\//.match slide.xpath('@src').text
+	puts "#{image[0]}"
+end
 
-# title = pavilion.css(".header").text
-# floor = pavilion.css(".mag_is a")
-# puts floor[0].text
-# site = pavilion.css(".mag_is__mag_web a").xpath('@href')
+doc.css(".mag_is tr").each do |info|
+	case info.css("td:first").text
+		when /Расположение/
+			temp = /\d/.match info.css("td:last").text
+			if !temp.nil?
+				floor = temp[0]
+			end
+		when /Веб-сайт/
+			site = info.css("td:last a").xpath('@href').text
+		when /Телефон/
+			phone = info.css("td:last").text
+		when /Принимаем к оплате/
+			info.css("td:last .mag_disc img").each do |card|
+				image = card.xpath('@src').text
+				name = card.xpath('@title').text
 
-# discount_imgs = pavilion.css(".mag_is__mag_disc img").xpath('@src')
-# card_img = pavilion.css(".mag_is__mag_card img").xpath('@src')
-# logo = pavilion.css(".mess_standart img.icon_standart").xpath('@src')
+				puts "#{image} --- #{name}"
+			end
+		when /Скидки по картам/
+			info.css("td:last").each do |card|
+				image = card.css(".mag_disc img").xpath('@src').text
+				name = card.css(".mag_disc img").xpath('@title').text
 
-# pavilion.xpath("//*[@class='h-mag_is']").remove
-# pavilion.xpath("//img").remove
-# content = pavilion
+					temp = /.*?([\d]+).*/.match card.css(".mag_disc_pro").text #Проверить существование
+					if !temp.nil?
+						percentage = temp[1]
+					end
+				puts "#{image} --- #{name} --- #{percentage}"			
+			end
+	end
+end
 
-# galery.css("a.highslide").each do |slide|
-# 	image = /.*\//.match slide.css("img").xpath('@src').text
-# 	puts image[0]
-# end
+content.search('img').remove
+content.css('.h-mag_is').remove
+
+puts content

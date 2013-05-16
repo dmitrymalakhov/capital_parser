@@ -60,14 +60,15 @@ class Parser
 			when 'services'
 				doc = get_document("#{@store.base_url}#{@store.services_url}")
 		end
+		doc.search("ul:has(li a[href*='plan'])").remove
+		categories = doc.css("ul.cell_standart_struct1");
 
-		categories = doc.css("ul.cell_standart_struct1:has(.cell_standart_struct1 span)")
 		category = categories.first
 		# categories.each do |category|
-			title = category.css("li.cell_standart_struct1 span.menuchilds").text
+			title = category.css("li.cell_standart_struct1").text
 		    category_obj = @store.categories.where(:title => title).first_or_create
 
-			pavilions = category.css("a:not([href*='plan'])")
+			pavilions = category.css("a")
 			pavilion = pavilions.first
 			# pavilions.each do |pavilion|
 				brand_obj = Brand.where(:title => pavilion.text).first_or_create
