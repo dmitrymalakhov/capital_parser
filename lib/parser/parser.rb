@@ -69,19 +69,19 @@ class Parser
 		doc.search("ul:has(li a[href*='plan'])").remove
 		categories = doc.css("ul.cell_standart_struct1");
 
-		category = categories.first
-		# categories.each do |category|
+		# category = categories.first
+		categories.each do |category|
 			title = category.css("li.cell_standart_struct1").text
 		    category_obj = @store.categories.where(:title => title).first_or_create
 
 			pavilions = category.css("a")
-			pavilion = pavilions.first
-			# pavilions.each do |pavilion|
+			# pavilion = pavilions.first
+			pavilions.each do |pavilion|
 				brand_obj = Brand.where(:title => pavilion.text).first_or_create
 				pavilion_obj = category_obj.pavilions.where(:brand_id => brand_obj.id).first_or_create
 				update_pavilion_description(pavilion_obj, pavilion['href'])
-			# end
-		# end
+			end
+		end
 	end
 
 	def update_pavilion_description(pavilion_obj, description_url)
@@ -123,18 +123,19 @@ class Parser
 				when /скидки по картам/i, /дисконтные карты/i
 					cards_type = info.css("td:last .mag_disc img")
 					cards_discount = info.css("td:last .mag_disc_pro")
-					
-					cards = cards_type.zip(cards_discount)
 
+					cards = cards_type.zip(cards_discount)
+					image, name, percentage = "", "", ""
 					cards.each do |card|
 						image = card.first.xpath('@src').text
 						name = card.first.xpath('@title').text
-
-						temp = /.*?([\d]+).*/.match card.last.text
-						if !temp.nil?
-							percentage = temp[1]
+						if !card.last.nil?
+							temp = /.*?([\d]+).*/.match card.last.text #Проверить существование
+							if !temp.nil?
+								percentage = temp[1]
+							end
 						end
-						
+
 						discount = Discount.where(:image => image, :percentage => percentage, :name => name).first_or_create
 						if !pavilion_obj.discounts.include?(discount)
 							pavilion_obj.discounts << discount
@@ -150,7 +151,7 @@ class Parser
 		content.search('img').remove
 		content.css('.h-mag_is').remove
 		content.css('.mag_is').remove
-		
+
 
 
 		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone)

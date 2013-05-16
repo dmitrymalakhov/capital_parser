@@ -11,8 +11,8 @@ class ParserController < ApplicationController
 
 
 		parser.update_category('pavilions')
-		# parser.update_category('services')
-		# parser.update_news
+		parser.update_category('services')
+		parser.update_news
 		# category = parser.get_categories.first
 		# pavilion = parser.get_pavilions_by_category(category).first
 		# @status = parser.get_description_by_pavilion(pavilion).floor
