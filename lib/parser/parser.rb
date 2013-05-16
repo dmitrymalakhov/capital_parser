@@ -37,7 +37,7 @@ class Parser
 		doc.css(".article tr.cell_standart_icon .view_icon_div a.menuchilds").each do |news|
 			title = news.css("img").xpath('@title').text
 			article = get_document("#{@store.base_url}#{news.xpath('@href').text}")
-			content = article.css("tr.article .block_is")
+			content = article.css(".block_is")
 
 			date = content.css(".header .date").text
 			news_obj = @store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
@@ -62,19 +62,19 @@ class Parser
 		end
 
 		categories = doc.css("ul.cell_standart_struct1:has(.cell_standart_struct1 span)")
-		# category = categories.first
-		categories.each do |category|
+		category = categories.first
+		# categories.each do |category|
 			title = category.css("li.cell_standart_struct1 span.menuchilds").text
 		    category_obj = @store.categories.where(:title => title).first_or_create
 
 			pavilions = category.css("a:not([href*='plan'])")
-			# pavilion = pavilions.first
-			pavilions.each do |pavilion|
+			pavilion = pavilions.first
+			# pavilions.each do |pavilion|
 				brand_obj = Brand.where(:title => pavilion.text).first_or_create
 				pavilion_obj = category_obj.pavilions.where(:brand_id => brand_obj.id).first_or_create
 				update_pavilion_description(pavilion_obj, pavilion['href'])
-			end
-		end
+			# end
+		# end
 	end
 
 	def update_pavilion_description(pavilion_obj, description_url)
