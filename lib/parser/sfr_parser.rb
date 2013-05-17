@@ -5,28 +5,35 @@ require 'parser/parser_base'
 class SFRParser < ParserBase
 
 	def update_news()
-		doc = get_document("#{@store.base_url}#{@store.news_url}")
-		doc.css('.view_icon_div').remove
+		if @store.news_url.nil?
+			return
+		end
 
-		doc.css(".article tr.cell_standart_icon a.menuchilds").each do |news|
-			title = news.text
-			path = news.xpath('@href').text
-			
-			article = get_document("#{@store.base_url}#{path}")
-			content = article.css(".article .block_is")
+		@store.news_url.split(' ').each do |path| 
 
-			date = content.css(".header .date").text
-			news_obj = @store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
+			doc = get_document("#{@store.base_url}#{path}")
+			doc.css('.view_icon_div').remove
 
-			content.css(".mess_standart img").each do |img|
-				src = img.xpath('@src').text
-				news_obj.news_gallery.where(:image => src).first_or_create
+			doc.css(".article tr.cell_standart_icon a.menuchilds").each do |news|
+				title = news.text
+				link = news.xpath('@href').text
+				
+				article = get_document("#{@store.base_url}#{link}")
+				content = article.css(".article .block_is")
+
+				date = content.css(".header .date").text
+				news_obj = @store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
+
+				content.css(".mess_standart img").each do |img|
+					src = img.xpath('@src').text
+					news_obj.news_gallery.where(:image => src).first_or_create
+				end
+				content.css('.mess_standart').search('img, hr').remove
+				content.css('.header').remove
+
+				news_obj.update_attributes(:content => content.css('.mess_standart').text)
+
 			end
-			content.css('.mess_standart').search('img, hr').remove
-			content.css('.header').remove
-
-			news_obj.update_attributes(:content => content.css('.mess_standart').text)
-
 		end
 	end
 
