@@ -5,10 +5,13 @@ require 'nokogiri'
 doc = Nokogiri::HTML(open("http://fantastika-nn.ru/?id=201"))
 doc.xpath('//@style').remove
 doc.search('script').remove
+doc.css('.view_icon_div').remove
 
-doc.css(".article tr.cell_standart_icon .view_icon_div a.menuchilds").each do |news|
-	title = news.css("img").xpath('@title').text
-	article = Nokogiri::HTML(open("http://fantastika-nn.ru#{news.xpath('@href').text}"))
+doc.css(".article tr.cell_standart_icon a.menuchilds").each do |news|
+	title = news.text
+	path = news.xpath('@href').text
+
+	article = Nokogiri::HTML(open("http://fantastika-nn.ru#{path}"))
 	article.xpath('//@style').remove
 	article.search('script').remove
 
