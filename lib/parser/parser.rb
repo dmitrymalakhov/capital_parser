@@ -165,11 +165,9 @@ class Parser
 			doc.xpath('//@style').remove
 			doc.search('script').remove
 		rescue Errno::ETIMEDOUT
-			result = false
 			puts "repeat query....."
-		else
-			result = true
-		end while !result
+			retry
+		end
 
 		return doc
 	end
