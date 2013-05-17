@@ -164,7 +164,7 @@ class Parser
 			doc = Nokogiri::HTML(open(path))
 			doc.xpath('//@style').remove
 			doc.search('script').remove
-		rescue Timeout::Error
+		rescue Errno::ETIMEDOUT
 			result = false
 			puts "repeat query....."
 		else

@@ -5,8 +5,8 @@ class ParserController < ApplicationController
 
 	def status
 		# parser = Parser.new(Store.where(:title => "Fantastika", :base_url => "http://www.fantastika-nn.ru", :pavilion_url => "/?id=218", :services_url => "/?id=240", :news_url => "/?id=201").first_or_create)
-		parser = Parser.new(Store.where(:title => "Respublika", :base_url => "http://www.respublika-nn.ru", :pavilion_url => "/?id=202", :news_url => "/?id=229").first_or_create)
-		# parser = Parser.new(Store.where(:title => "7sky", :base_url => "http://7nebonnov.ru", :pavilion_url => "/?id=227", :services_url => "/?id=226", :news_url => "/?id=201").first_or_create)
+		# parser = Parser.new(Store.where(:title => "Respublika", :base_url => "http://www.respublika-nn.ru", :pavilion_url => "/?id=202", :news_url => "/?id=229").first_or_create)
+		parser = Parser.new(Store.where(:title => "7sky", :base_url => "http://7nebonnov.ru", :pavilion_url => "/?id=227", :services_url => "/?id=226", :news_url => "/?id=201").first_or_create)
 		# parser = Parser.new(Store.where(:title => "Etagi", :base_url => "http://www.etagi.ru", :pavilion_url => "/?id=209", :news_url => "/?id=226").first_or_create)
 
 
