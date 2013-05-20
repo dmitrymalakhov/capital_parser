@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515060151) do
+ActiveRecord::Schema.define(:version => 20130520121518) do
 
   create_table "brands", :force => true do |t|
     t.string   "title"
@@ -58,6 +58,20 @@ ActiveRecord::Schema.define(:version => 20130515060151) do
 
   add_index "discounts_pavilions", ["discount_id", "pavilion_id"], :name => "index_discounts_pavilions_on_discount_id_and_pavilion_id"
   add_index "discounts_pavilions", ["pavilion_id", "discount_id"], :name => "index_discounts_pavilions_on_pavilion_id_and_discount_id"
+
+  create_table "films", :force => true do |t|
+    t.string   "title"
+    t.string   "engtitle"
+    t.string   "genre"
+    t.string   "duration"
+    t.string   "in_theaters"
+    t.string   "production"
+    t.string   "producer"
+    t.string   "actors"
+    t.text     "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "news", :force => true do |t|
     t.string   "title"
@@ -116,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20130515060151) do
     t.string   "base_url"
     t.string   "pavilion_url"
     t.string   "services_url"
+    t.string   "cinema_url"
     t.string   "news_url"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

@@ -22,17 +22,19 @@ class SFRParser < ParserBase
 				content = article.css(".article .block_is")
 
 				date = content.css(".header .date").text
-				news_obj = @store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
+				news_obj = @store.news.where(:title => title).first_or_initialize(:title => title, :date_publication => date)
 
-				content.css(".mess_standart img").each do |img|
-					src = img.xpath('@src').text
-					news_obj.news_gallery.where(:image => src).first_or_create
+				if news_obj.new_record?
+					content.css(".mess_standart img").each do |img|
+						src = img.xpath('@src').text
+						news_obj.news_gallery.where(:image => src).first_or_create
+					end
+					content.css('.mess_standart').search('img, hr').remove
+					content.css('.header').remove
+
+					news_obj.update_attributes(:content => content.css('.mess_standart').text)
+					news_obj.save
 				end
-				content.css('.mess_standart').search('img, hr').remove
-				content.css('.header').remove
-
-				news_obj.update_attributes(:content => content.css('.mess_standart').text)
-
 			end
 		end
 	end

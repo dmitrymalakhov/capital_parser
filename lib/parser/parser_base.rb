@@ -35,9 +35,11 @@ class ParserBase
 
 	def get_document(path)
 		begin
-			doc = Nokogiri::HTML(open(path))
+			doc = Nokogiri::HTML(open(path), nil, 'UTF-8')
 			doc.xpath('//@style').remove
 			doc.search('script').remove
+			doc.encoding = 'UTF-8'
+			
 		rescue Errno::ETIMEDOUT
 			puts "repeat query....."
 			retry
