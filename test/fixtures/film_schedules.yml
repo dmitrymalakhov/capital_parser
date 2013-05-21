@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  store: 
+  film_id: 1
+  option: MyString
+  auditorium: MyString
+  time: MyString
+  price: MyString
+
+two:
+  store: 
+  film_id: 1
+  option: MyString
+  auditorium: MyString
+  time: MyString
+  price: MyString

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520121518) do
+ActiveRecord::Schema.define(:version => 20130521105807) do
 
   create_table "brands", :force => true do |t|
     t.string   "title"
@@ -59,8 +59,25 @@ ActiveRecord::Schema.define(:version => 20130520121518) do
   add_index "discounts_pavilions", ["discount_id", "pavilion_id"], :name => "index_discounts_pavilions_on_discount_id_and_pavilion_id"
   add_index "discounts_pavilions", ["pavilion_id", "discount_id"], :name => "index_discounts_pavilions_on_pavilion_id_and_discount_id"
 
+  create_table "film_schedules", :force => true do |t|
+    t.integer  "store_id"
+    t.integer  "film_id"
+    t.string   "option"
+    t.string   "auditorium"
+    t.string   "time"
+    t.integer  "price"
+    t.integer  "day"
+    t.integer  "month"
+    t.integer  "year"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "film_schedules", ["store_id"], :name => "index_film_schedules_on_store_id"
+
   create_table "films", :force => true do |t|
     t.string   "title"
+    t.string   "poster"
     t.string   "engtitle"
     t.string   "genre"
     t.string   "duration"
