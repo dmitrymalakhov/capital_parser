@@ -2,4 +2,5 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run CapitalAdmin::Application
-run API::V1
+
+

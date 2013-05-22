@@ -60,6 +60,6 @@ module CapitalAdmin
     config.assets.version = '1.0'
 
     config.paths.add "app/api", :glob => "**/*.rb"
-    config.autoload_paths += Dir["#{Rails.root}/app"]
+    config.autoload_paths += Dir["#{Rails.root}/app/api/*"]
   end
 end
