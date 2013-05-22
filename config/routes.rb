@@ -1,5 +1,5 @@
 CapitalAdmin::Application.routes.draw do
-
+  mount API::V1 => '/'
   root :to => 'parser#status'
   # The priority is based upon order of creation:
   # first created -> highest priority.

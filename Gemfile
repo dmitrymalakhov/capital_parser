@@ -20,6 +20,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
   	gem "nokogiri", "~> 1.5.9"
  	gem 'uglifier', '>= 1.0.3'
+ 	gem "grape", "~> 0.4.1"
  	# gem "ensure-encoding", "~> 0.1"
 end
 
