@@ -12,9 +12,15 @@ module API
          	Store.all
         end
 
-        desc "Получить информацию о ТРЦ по id"
+        desc "Получить ТРЦ по id"
         get :get_by_id do
-          Store.find(params[:id])
+          array = []
+          params[:id].split(",").each do |id|
+            if Store.exists?(id)
+              array.push(Store.find(id))
+            end
+          end
+          return array
         end
       end
 
@@ -46,9 +52,15 @@ module API
           Pavilion.find(params[:id])
         end
 
-        desc "Получить павильоны ТРЦ"
-        get :get_by_store_id do
-          Store.find(params[:id]).pavilions
+        desc "Получить павильоны ТРЦ (id string => 1,2,3,4)"
+        get :get_by_stores_id do
+          array = []
+          params[:id].split(",").each do |id|
+            if Store.exists?(id)
+              array.push(Store.find(id).pavilions)
+            end
+          end
+          return array
         end
 
         desc "Получить павильоны категории"
@@ -102,12 +114,32 @@ module API
           return array
         end
       end
-
+      resource :brands do
+        desc "Получиь все брэнды"
+        get :get_all do
+          Brand.all
+        end
+      end
       resource :films do
         desc "Получить все фильмы"
-        get :get_all
-
+        get :get_all do
+          Film.all
         end
+
+        desc "Получить фильм"
+        get :get_by_id do
+          Film.find(params[:id])
+        end
+
+        desc "Получить все фильмы идущие в кинотеатре ТРЦ"
+        get :get_by_store_id do
+          Store.find(params[:id]).film_schedules.select(:film_id).uniq
+        end
+
+        # desc "Получить все фильмы идущие в кинотеатре ТРЦ по дате (day, month, year)"
+        # get :get_by_date_from_store do
+        #   FilmSchedules.where(:day => params[:day], :month => params[:month], :year => params[:year])
+        # end
       end
     end
   end
