@@ -7,7 +7,10 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 
-
+group :development do
+	gem "capistrano-deploy", "~> 0.3.2", :require => nil
+	gem "rvm-capistrano", "~> 1.3.0"
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,6 +25,7 @@ group :assets do
  	gem 'uglifier', '>= 1.0.3'
  	gem "grape", "~> 0.4.1"
  	# gem "ensure-encoding", "~> 0.1"
+ 	gem "whenever", "~> 0.8.2"
 end
 
 gem 'jquery-rails'

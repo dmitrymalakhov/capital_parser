@@ -115,12 +115,21 @@ module API
         end
       end
       resource :brands do
-        desc "Получиь все брэнды"
+        desc "Получить все брэнды"
         get :get_all do
           Brand.all
         end
       end
+      
+      resource :news do
+        desc "Получить все новости"
+        get :get_all do
+          News.all
+        end
+      end
+
       resource :films do
+
         desc "Получить все фильмы"
         get :get_all do
           Film.all
@@ -136,10 +145,35 @@ module API
           Store.find(params[:id]).film_schedules.select(:film_id).uniq
         end
 
-        # desc "Получить все фильмы идущие в кинотеатре ТРЦ по дате (day, month, year)"
-        # get :get_by_date_from_store do
-        #   FilmSchedules.where(:day => params[:day], :month => params[:month], :year => params[:year])
-        # end
+        desc "Получить все фильмы идущие в кинотеатре ТРЦ по дате (day, month, year)"
+        get :get_by_date_from_store do
+          # FilmSchedule.where(:day => params[:day], :month => params[:month], :year => params[:year])
+          if Store.exists?(params[:id])
+            Store.find(params[:id]).film_schedules.where(:day => params[:day], :month => params[:month], :year => params[:year]).select(:film_id).uniq
+          end
+        end
+      end
+
+      resource :schedules do
+        desc "Получить все расписание по всем ТРЦ"
+        get :get_all do
+          FilmSchedule.all
+        end
+
+        desc "Получить расписание по ТРЦ"
+        get :get_by_store_id do
+          Store.find(params[:id]).film_schedules
+        end
+
+        desc "Получить сеанс"
+        get :get_by_id do 
+          FilmSchedule.find(params[:id])
+        end
+
+        desc "Получить все сеансы по дате в кинотеатре ТРЦ"
+        get :get_by_date_from_store do
+          Store.find(params[:id]).film_schedules.where(:day => params[:day], :month => params[:month], :year => params[:year])
+        end
       end
     end
   end

@@ -51,19 +51,19 @@ class SFRParser < ParserBase
 			doc.search("ul:has(li a[href*='plan'])").remove
 			categories = doc.css("ul.cell_standart_struct1");
 
-			category = categories.first
-			# categories.each do |category|
+			# category = categories.first
+			categories.each do |category|
 				title = category.css("li.cell_standart_struct1").text
 			    category_obj = @store.categories.where(:title => title).first_or_create
 
 				pavilions = category.css("a")
-				pavilion = pavilions.first
-				# pavilions.each do |pavilion|
+				# pavilion = pavilions.first
+				pavilions.each do |pavilion|
 					brand_obj = Brand.where(:title => pavilion.text).first_or_create
 					pavilion_obj = category_obj.pavilions.where(:brand_id => brand_obj.id).first_or_create
 					update_pavilion_description(pavilion_obj, pavilion['href'])
-				# end
-			# end
+				end
+			end
 		end
 	end
 

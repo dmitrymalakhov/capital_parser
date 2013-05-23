@@ -7,7 +7,7 @@ class ParserBase
 	end
 
 	def get_status()
-		return "OK"
+		puts "OK"
 	end
 
 	def get_categories()

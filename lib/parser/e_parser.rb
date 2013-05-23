@@ -148,7 +148,7 @@ class EParser < ParserBase
 		content.search('img').remove
 		content.css('.h-mag_is').remove
 		content.css('.mag_is').remove
-
-		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content, :floor => floor, :site => site, :phone => phone)
+		#!!!! error get content
+		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone)
 	end
 end
