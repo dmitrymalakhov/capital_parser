@@ -1,7 +1,7 @@
 # encoding: utf-8
 module API
   class API < Grape::API
-  	format :xml
+  	format :json
   	prefix :api
 
   	version :v1 do
@@ -120,7 +120,7 @@ module API
           Brand.all
         end
       end
-      
+
       resource :news do
         desc "Получить все новости"
         get :get_all do
@@ -166,7 +166,7 @@ module API
         end
 
         desc "Получить сеанс"
-        get :get_by_id do 
+        get :get_by_id do
           FilmSchedule.find(params[:id])
         end
 
