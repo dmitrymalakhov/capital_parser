@@ -96,7 +96,7 @@ module API
         get :get_by_store_id do
           array = []
           Store.find(params[:id]).pavilions.each do |pavilion|
-            info = [pavilion.pavilion_description, pavilion.pavilion_gallery, pavilion.discounts, pavilion.credits]
+            info = [[pavilion.pavilion_description], pavilion.pavilion_gallery, pavilion.discounts, pavilion.credits]
             array.push(info)
           end
           return array
