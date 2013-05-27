@@ -114,6 +114,11 @@ module API
         get :get_all do
           News.all
         end
+
+        desc "Получить новости ТРЦ"
+        get :get_by_store_id do
+          Store.find(params[:id]).news
+        end
       end
 
       resource :films do

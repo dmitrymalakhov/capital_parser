@@ -89,7 +89,7 @@ class EParser < ParserBase
 		content = doc.css(".block_is table[cellpadding='5']")
 		
 		logo = content.css("img.icon_standart").xpath('@src').text
-		floor, site, phone = "", "", ""
+		floor, site, phone = "-10", "", "-10"
 
 		doc.css(".highslide-gallery a.highslide img").each do |slide|
 			image = /.*\//.match slide.xpath('@src').text

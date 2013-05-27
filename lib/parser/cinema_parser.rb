@@ -5,7 +5,11 @@ require 'parser/parser_base'
 class CinemaParser < ParserBase
 	
 	def update_schedule
-		doc = get_document("#{@store.cinema_url}/multiplexes/show/27")
+		if @store.cinema_url.nil?
+			return
+		end
+		
+		doc = get_document("#{@store.cinema_url}")
 		days = doc.css(".multiplex_schedule")
 		# day = days.first
 		days.each do |day|
@@ -17,7 +21,7 @@ class CinemaParser < ParserBase
 			schedules.each do |schedule|
 				film_path = schedule.css('.msch_group_title a').xpath('@href')
 				
-				film = get_document("#{@store.cinema_url}#{film_path}")
+				film = get_document("http://www.cinemapark.ru#{film_path}")
 				film.css("#film_title #film_title_formats").remove
 
 				puts film_path
