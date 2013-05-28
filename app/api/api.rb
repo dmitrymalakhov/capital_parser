@@ -117,7 +117,12 @@ module API
 
         desc "Получить новости ТРЦ"
         get :get_by_store_id do
-          Store.find(params[:id]).news
+          array = []
+          Store.find(params[:id]).news.each do |article|
+            info = [[article.title, article.date_publication, article.content], article.news_gallery]
+            array.push(info)
+          end
+          return array
         end
       end
 

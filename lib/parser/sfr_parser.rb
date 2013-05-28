@@ -13,11 +13,11 @@ class SFRParser < ParserBase
 
 			doc = get_document("#{@store.base_url}#{path}")
 			doc.css('.view_icon_div').remove
-
-			doc.css(".article tr.cell_standart_icon a.menuchilds").each do |news|
+			news = doc.css(".article tr.cell_standart_icon a.menuchilds").first
+			# doc.css(".article tr.cell_standart_icon a.menuchilds").each do |news|
 				title = news.text
 				link = news.xpath('@href').text
-				
+	
 				article = get_document("#{@store.base_url}#{link}")
 				content = article.css(".article .block_is")
 
@@ -27,7 +27,8 @@ class SFRParser < ParserBase
 				if news_obj.new_record?
 					content.css(".mess_standart img").each do |img|
 						src = img.xpath('@src').text
-						news_obj.news_gallery.where(:image => src).first_or_create
+						puts news_obj.class
+						news_obj.news_gallery.new(:image => src)
 					end
 					content.css('.mess_standart').search('img, hr').remove
 					content.css('.header').remove
@@ -35,7 +36,7 @@ class SFRParser < ParserBase
 					news_obj.update_attributes(:content => content.css('.mess_standart').text)
 					news_obj.save
 				end
-			end
+			# end
 		end
 	end
 
