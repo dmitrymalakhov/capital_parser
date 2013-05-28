@@ -119,7 +119,7 @@ module API
         get :get_by_store_id do
           array = []
           Store.find(params[:id]).news.each do |article|
-            info = [[article.title, article.date_publication, article.content], article.news_gallery]
+            info = [[article], article.news_gallery]
             array.push(info)
           end
           return array
