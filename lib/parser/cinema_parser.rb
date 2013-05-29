@@ -74,7 +74,7 @@ class CinemaParser < ParserBase
 							price = temp[1]
 						end
 
-						@store.film_schedules.where(:day => date.day, :month => date.month, :year => date.year, :time => time).first_or_create(:film_id => film_obj.id, :option => option, :auditorium => auditorium, :time => time, :price => price, :day => date.day, :month => date.month, :year => date.year)
+						@store.film_schedules.where(:date => date, :time => time).first_or_create(:film_id => film_obj.id, :option => option, :auditorium => auditorium, :time => time, :price => price, :date => date)
 						# puts "[#{film_title}] #{option} --- #{auditorium} --- #{time} --- #{price}"
 					end
 				end	
