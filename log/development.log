@@ -18425,3 +18425,195 @@ Processing by ParserController#status as HTML
   [1m[35mFilmSchedule Load (1.1ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 3 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '17:40' LIMIT 1
   Rendered parser/status.html.haml within layouts/main (9.7ms)
 Completed 200 OK in 301019ms (Views: 170.4ms | ActiveRecord: 621.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-03 10:54:45 +0400
+Connecting to database specified by database.yml
+Processing by ParserController#status as HTML
+  [1m[36mStore Load (0.5ms)[0m  [1mSELECT "stores".* FROM "stores" WHERE "stores"."title" = '7sky' AND "stores"."base_url" = 'http://7nebonnov.ru' AND "stores"."pavilion_url" = '/?id=227 /?id=226' AND "stores"."news_url" = '/?id=201 /?id=234' AND "stores"."cinema_url" = 'http://www.cinemapark.ru/multiplexes/show/27' LIMIT 1[0m
+  [1m[35mStore Load (0.4ms)[0m  SELECT "stores".* FROM "stores" 
+  [1m[36mFilm Load (0.3ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Гэтсби' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (59.3ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '10:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '15:45' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '20:50' LIMIT 1
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Гэтсби английская версия c субтитрами' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '22:20' LIMIT 1
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Мастер' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '13:25' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '18:30' LIMIT 1[0m
+  [1m[35mFilm Load (0.5ms)[0m  SELECT "films".* FROM "films" WHERE "films"."title" = 'Мальчишник. Часть III' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '10:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '12:20' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '14:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '16:20' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '18:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '20:20' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '22:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '11:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '13:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '15:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '17:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '19:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '21:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '23:40' LIMIT 1
+  [1m[36mFilm Load (0.5ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Мальчишник. Часть III в правильном переводе Гоблина' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '14:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '18:50' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '20:50' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '22:50' LIMIT 1[0m
+  [1m[35mFilm Load (0.4ms)[0m  SELECT "films".* FROM "films" WHERE "films"."title" = 'Форсаж 6' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '10:30' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '13:10' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '16:00' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '18:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '21:15' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '23:50' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '14:10' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '17:00' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '19:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '22:15' LIMIT 1
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Эпик' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '10:25' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '12:30' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '16:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '11:30' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '13:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '15:50' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '18:00' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '20:10' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '12:00' LIMIT 1
+  [1m[36mFilm Load (0.4ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Я очень возбужден' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-03' AND "film_schedules"."time" = '23:35' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Гэтсби' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '10:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.7ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '15:45' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.7ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '20:50' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Гэтсби английская версия c субтитрами' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '22:20' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Мастер' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '13:25' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '18:30' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "films".* FROM "films" WHERE "films"."title" = 'Мальчишник. Часть III' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '10:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '12:20' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '14:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '16:20' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '18:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '20:20' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '22:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '11:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '13:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '15:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '17:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '19:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '21:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '23:40' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Мальчишник. Часть III в правильном переводе Гоблина' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '14:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '18:50' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '20:50' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '22:50' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "films".* FROM "films" WHERE "films"."title" = 'Форсаж 6' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '10:30' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '13:10' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '16:00' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '18:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '21:15' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '23:50' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '14:10' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '17:00' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '19:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '22:15' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Эпик' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '10:25' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '12:30' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '16:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '11:30' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '13:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '15:50' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '18:00' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '20:10' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '12:00' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Я очень возбужден' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-04' AND "film_schedules"."time" = '23:35' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Гэтсби' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '10:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '15:45' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '20:50' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Гэтсби английская версия c субтитрами' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '22:20' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Великий Мастер' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '13:25' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '18:30' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "films".* FROM "films" WHERE "films"."title" = 'Мальчишник. Часть III' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '10:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '12:20' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '14:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '16:20' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '18:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '20:20' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '22:20' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '11:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '13:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '15:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '17:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.8ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '19:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.8ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '21:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (1.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '23:40' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Мальчишник. Часть III в правильном переводе Гоблина' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '14:40' LIMIT 1
+  [1m[36mFilmSchedule Load (1.2ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '18:50' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '20:50' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '22:50' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "films".* FROM "films" WHERE "films"."title" = 'Форсаж 6' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '10:30' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (1.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '13:10' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '16:00' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '18:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '21:15' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '23:50' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '14:10' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '17:00' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '19:40' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '22:15' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Эпик' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '10:25' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '12:30' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '16:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '11:30' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '13:40' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '15:50' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '18:00' LIMIT 1
+  [1m[36mFilmSchedule Load (0.9ms)[0m  [1mSELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '20:10' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '12:00' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."title" = 'Я очень возбужден' LIMIT 1[0m
+  [1m[35mFilmSchedule Load (0.9ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1 AND "film_schedules"."date" = '2013-06-05' AND "film_schedules"."time" = '23:35' LIMIT 1
+Completed   in 26508ms
+
+
+Started GET "/api/v1/films/get_by_store_id?id=1" for 127.0.0.1 at 2013-06-03 10:55:51 +0400
+Connecting to database specified by database.yml
+  [1m[36mStore Load (0.6ms)[0m  [1mSELECT "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mFilmSchedule Load (7.0ms)[0m  SELECT "film_schedules".* FROM "film_schedules" WHERE "film_schedules"."store_id" = 1
+
+
+Started GET "/api/v1/films/get_by_store_id?id=1" for 127.0.0.1 at 2013-06-03 10:58:09 +0400
+Connecting to database specified by database.yml
+  [1m[36mStore Load (0.4ms)[0m  [1mSELECT "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+
+
+Started GET "/api/v1/films/get_by_store_id?id=1" for 127.0.0.1 at 2013-06-03 11:06:00 +0400
+Connecting to database specified by database.yml
+  [1m[36mStore Load (0.6ms)[0m  [1mSELECT "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (17.1ms)[0m  SELECT DISTINCT film_id, id FROM "film_schedules" WHERE "film_schedules"."store_id" = 1
+
+
+Started GET "/api/v1/films/get_by_store_id?id=1" for 127.0.0.1 at 2013-06-03 11:09:16 +0400
+Connecting to database specified by database.yml
+  [1m[36mStore Load (0.4ms)[0m  [1mSELECT "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (2.6ms)[0m  SELECT DISTINCT film_id, id FROM "film_schedules" WHERE "film_schedules"."store_id" = 1
+  [1m[36mFilm Load (22.5ms)[0m  [1mSELECT "films".* FROM "films" WHERE "films"."id" IN (1, 1, 1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 1, 1, 1, 2, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8, 1, 1, 1, 2, 2, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8, 1, 1, 1, 2, 2, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8, 1, 1, 1, 2, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8, 1, 1, 1, 2, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8, 1, 1, 1, 2, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8, 1, 1, 1, 2, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8)[0m
+
+
+Started GET "/api/v1/films/get_all" for 127.0.0.1 at 2013-06-03 11:09:53 +0400
+  [1m[35mFilm Load (0.6ms)[0m  SELECT "films".* FROM "films" 

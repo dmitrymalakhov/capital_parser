@@ -140,7 +140,8 @@ module API
 
         desc "Получить все фильмы идущие в кинотеатре ТРЦ"
         get :get_by_store_id do
-          Store.find(params[:id]).film_schedules.select(:film_id).uniq
+          ids = Store.find(params[:id]).film_schedules.select(:film_id).uniq.pluck(:id)
+          Film.where(:id => ids)
         end
 
         desc "Получить все фильмы идущие в кинотеатре ТРЦ по дате (day, month, year)"
