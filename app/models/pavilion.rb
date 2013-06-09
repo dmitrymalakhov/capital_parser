@@ -6,4 +6,9 @@ class Pavilion < ActiveRecord::Base
   has_one :store, :through => :categories
   has_one :pavilion_description
   has_many :pavilion_gallery
+  has_one :region
+
+  def brandname
+  	self.brand.title
+  end
 end

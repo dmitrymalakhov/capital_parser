@@ -7,7 +7,7 @@ class CreateFilmSchedules < ActiveRecord::Migration
       t.string :auditorium
       t.string :time
       t.integer :price
-      t.date :day
+      t.date :date
       t.timestamps
     end
     add_index :film_schedules, :store_id

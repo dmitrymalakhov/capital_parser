@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Path:
+  = @region.path
+%p
+  %b Pavilion:
+  = @region.pavilion.brandname
+
+= link_to 'Edit', edit_region_path(@region)
+\|
+= link_to 'Back', regions_path, :store => params[:store]

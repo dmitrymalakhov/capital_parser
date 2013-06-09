@@ -1,0 +1,7 @@
+%table
+	- Store.all.each do |store|
+		%tr
+			%td= store.title
+			%td= link_to "add path", :controller => :regions, :action => :new, :store => store.id
+			%td= link_to "view map", :controller => :map, :action => :viewer, :store => store.id
+			

@@ -1,5 +1,18 @@
 CapitalAdmin::Application.routes.draw do
-  root :to => 'parser#status'
+  root :to => 'application#index' 
+  
+  resources :regions
+  match 'regions/new' => 'regions#new'
+  
+  match 'parser' => 'parser#index'
+  match 'parser/go' => 'parser#go'
+  match 'map' => 'map#index'
+  match 'map/viewer/json/path' => 'map#get_regions'
+  match 'map/viewer/json/pavilion_by_path' => 'map#get_pavilion_by_path'
+  match 'map/viewer' => 'map#viewer'
+  match 'map/viewer/set_attr' => 'map#set_attr'
+
+  
   mount API::API => '/'
 
   # The priority is based upon order of creation:

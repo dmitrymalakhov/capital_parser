@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529102715) do
+ActiveRecord::Schema.define(:version => 20130607072849) do
 
   create_table "brands", :force => true do |t|
     t.string   "title"
@@ -139,6 +139,17 @@ ActiveRecord::Schema.define(:version => 20130529102715) do
 
   add_index "pavilions", ["brand_id"], :name => "index_pavilions_on_brand_id"
   add_index "pavilions", ["category_id"], :name => "index_pavilions_on_category_id"
+
+  create_table "regions", :force => true do |t|
+    t.text     "path"
+    t.integer  "pavilion_id"
+    t.integer  "store_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "regions", ["pavilion_id"], :name => "index_regions_on_pavilion_id"
+  add_index "regions", ["store_id"], :name => "index_regions_on_store_id"
 
   create_table "stores", :force => true do |t|
     t.string   "title"

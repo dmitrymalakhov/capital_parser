@@ -1,0 +1,5 @@
+%table
+	- @stores.each do |store|
+		%tr
+			%td= store.title
+			%td= button_to "Parsing", :controller => 'parser', :action => 'go', :id => store.id

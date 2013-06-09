@@ -1,0 +1,17 @@
+%h1 Listing regions
+
+%table
+  %tr
+    %th Path
+    %th Pavilion
+    %th
+    %th
+    %th
+
+  - @regions.each do |region|
+    %tr
+      %td= region.path
+      %td= region.pavilion.brandname
+      %td= link_to 'Show', region
+      %td= link_to 'Edit', edit_region_path(region)
+      %td= link_to 'Destroy', region, :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -1,0 +1,15 @@
+= content_for :scripts do
+	= javascript_include_tag "raphael-min"
+	= javascript_include_tag "map"
+
+.map_manager
+	= form_tag({:controller => "map", :action => "set_attr"}, :method => "get")
+	%table
+		%tr
+			%td
+				.store{:name => @store.id}= @store.title
+			%td
+				= select_tag(:region, options_for_select(@regions.map {|region| [region.id, region.id]}))
+			%td
+				= select_tag(:pavilion, options_for_select(@pavilions.map {|pavilion| [pavilion.brandname, pavilion.id]}))
+	= submit_tag "Confirm"
