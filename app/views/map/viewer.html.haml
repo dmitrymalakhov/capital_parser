@@ -3,13 +3,17 @@
 	= javascript_include_tag "map"
 
 .map_manager
+	.attr{:store => params[:store], :floor => params[:floor]}
+
 	= form_tag({:controller => "map", :action => "set_attr"}, :method => "get")
 	%table
 		%tr
 			%td
-				.store{:name => @store.id}= @store.title
+				= @store.title
 			%td
 				= select_tag(:region, options_for_select(@regions.map {|region| [region.id, region.id]}))
 			%td
 				= select_tag(:pavilion, options_for_select(@pavilions.map {|pavilion| [pavilion.brandname, pavilion.id]}))
+				= hidden_field_tag "floor", params[:floor]
+
 	= submit_tag "Confirm"

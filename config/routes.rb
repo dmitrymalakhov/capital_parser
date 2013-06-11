@@ -7,6 +7,7 @@ CapitalAdmin::Application.routes.draw do
   match 'parser' => 'parser#index'
   match 'parser/go' => 'parser#go'
   match 'map' => 'map#index'
+  match 'map/load' => 'map#load'
   match 'map/viewer/json/path' => 'map#get_regions'
   match 'map/viewer/json/pavilion_by_path' => 'map#get_pavilion_by_path'
   match 'map/viewer' => 'map#viewer'

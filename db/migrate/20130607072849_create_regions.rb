@@ -4,6 +4,7 @@ class CreateRegions < ActiveRecord::Migration
       t.text :path
       t.references :pavilion
       t.references :store
+      t.integer :floor
 
       t.timestamps
     end

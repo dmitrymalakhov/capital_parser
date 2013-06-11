@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20130607072849) do
     t.text     "path"
     t.integer  "pavilion_id"
     t.integer  "store_id"
+    t.integer  "floor"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

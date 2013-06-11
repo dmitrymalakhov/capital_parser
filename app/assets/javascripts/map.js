@@ -1,31 +1,29 @@
 $(document).ready(function() {
-	var store = $(".store").attr("name");
+	var store = $(".attr").attr("store");
+	var floor = $(".attr").attr("floor");
 	$.ajax({
 		type: 'POST',
-		data: {store: store},
+		data: {store: store, floor: floor},
 		url: "/map/viewer/json/path",
 		success: function (response){
 
-			var map = [0,0,600,600];
+			var map = [0,0,1000,1000];
 			$.each(response, function(i,item){
 				map.push(item);
 			})
 
-			var paper = Raphael(map).translate(200, 200);
-		
+			var paper = Raphael(map).translate(50, 0);
+
 			paper.forEach(function(element) {
 		        element.click(function(e) {
-		      		$("#region").val($(e.target).attr('font'));
-		   //    		$.ajax({
-					// 	type: 'POST',
-					// 	data: {path: path},
-					// 	url: "/map/viewer/json/pavilion_by_path",
-					// 	success: function (response){
-					// 		alert(response)
-					// 	}
-					// });
+		        	attr = JSON.parse($(e.target).attr('font'));
+
+		        	$("#region").val(attr.id);
+		      		$("#pavilion").val(attr.pavilion_id);
 		        });
 		    });
+
+		    $("svg").removeAttr("style");
 		}
 	});
 

@@ -19,12 +19,12 @@ class ParserController < ApplicationController
 		s_parser = SFRParser.new(store)
 		c_parser = CinemaParser.new(store)
 
-		puts "start cinema parsing"
-		c_parser.update_schedule
+		# puts "start cinema parsing"
+		# c_parser.update_schedule
 		puts "start category parsing"
 		s_parser.update_category()
-		puts "start news parsing"
-		s_parser.update_news
+		# puts "start news parsing"
+		# s_parser.update_news
 
 		# category = parser.get_categories.first
 		# pavilion = parser.get_pavilions_by_category(category).first
