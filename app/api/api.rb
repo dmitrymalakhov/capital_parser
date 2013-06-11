@@ -75,7 +75,7 @@ module API
           array = []
 
           Pavilion.find(:all).each do |pavilion|
-            info = [[pavilion.pavilion_description], pavilion.pavilion_gallery, pavilion.discounts, pavilion.credits, pavilion.region]
+            info = [[pavilion.pavilion_description], pavilion.pavilion_gallery, pavilion.discounts, pavilion.credits, [pavilion.region]]
             array.push(info)
           end
           return array
@@ -89,14 +89,14 @@ module API
         desc "Описание павильона"
         get :get_by_pavilion_id do
           pavilion = Pavilion.find(params[:id])
-          return [[pavilion.pavilion_description], pavilion.pavilion_gallery, pavilion.discounts, pavilion.credits, pavilion.region]
+          return [[pavilion.pavilion_description], pavilion.pavilion_gallery, pavilion.discounts, pavilion.credits, [pavilion.region]]
         end
 
         desc "Описание всех павильонов в ТРЦ"
         get :get_by_store_id do
           array = []
           Store.find(params[:id]).pavilions.each do |pavilion|
-            info = [[pavilion.pavilion_description], pavilion.pavilion_gallery, pavilion.discounts, pavilion.credits, pavilion.region]
+            info = [[pavilion.pavilion_description], pavilion.pavilion_gallery, pavilion.discounts, pavilion.credits, [pavilion.region]]
             array.push(info)
           end
           return array
