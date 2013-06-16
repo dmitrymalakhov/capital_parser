@@ -24,7 +24,7 @@ class MapController < ApplicationController
 	def get_regions
 		@regions =  Store.find(params[:store]).regions.where(:floor => params[:floor])
 
-	    response = @regions.map {|region| !region.nil? ? {:type => 'path', :path => region.path, :font => region.to_json(:only => [:id,:pavilion_id]), "stroke-width" => "2", "stroke" => !region.pavilion.nil? ? "#ff0000" : "#000000", :href => "#", :title => !region.pavilion.nil? ? region.pavilion.brand.title : "not pavilion"} : nil }
+	    response = @regions.map {|region| !region.nil? ? {:type => 'path', :path => region.path, :font => region.to_json(:only => [:id,:pavilion_id]), "stroke-width" => "2", "stroke" => !region.pavilion.nil? ? "#ff0000" : "#000000", :href => "#", :fill => "#00ff00",:title => !region.pavilion.nil? ? region.pavilion.brand.title : "not pavilion"} : nil }
 	
 		respond_to do |format|
 	      # format.html # index.html.erb
