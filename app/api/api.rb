@@ -80,8 +80,7 @@ module API
               [pavilion.pavilion_description],
               pavilion.pavilion_gallery.nil? ? [nil] : pavilion.pavilion_gallery, 
               pavilion.discounts.nil? ? [nil] : pavilion.discounts,
-              pavilion.credits.nil? ? [nil] : pavilion.credits,
-              pavilion.region.nil? ? [nil] : pavilion.region
+              pavilion.credits.nil? ? [nil] : pavilion.credits
             ]
             array.push(info)
           end
@@ -100,8 +99,7 @@ module API
               [pavilion.pavilion_description],
               pavilion.pavilion_gallery.nil? ? [nil] : pavilion.pavilion_gallery, 
               pavilion.discounts.nil? ? [nil] : pavilion.discounts,
-              pavilion.credits.nil? ? [nil] : pavilion.credits,
-              pavilion.region.nil? ? [nil] : pavilion.region
+              pavilion.credits.nil? ? [nil] : pavilion.credits
             ]
         end
 
@@ -113,14 +111,21 @@ module API
               [pavilion.pavilion_description],
               pavilion.pavilion_gallery.nil? ? [nil] : pavilion.pavilion_gallery, 
               pavilion.discounts.nil? ? [nil] : pavilion.discounts,
-              pavilion.credits.nil? ? [nil] : pavilion.credits,
-              pavilion.region.nil? ? [nil] : pavilion.region
+              pavilion.credits.nil? ? [nil] : pavilion.credits
             ]
             array.push(info)
           end
           return array
         end
       end
+
+      resource :maps do
+        desc "Получить все path для ТРЦ"
+          get :get_by_store_id do
+          Store.find(params[:id]).regions
+        end
+      end
+
       resource :brands do
         desc "Получить все брэнды"
         get :get_all do

@@ -47,14 +47,14 @@ class MapParser < ParserBase
 
 					end
 
-					# d = ""
-					# path = primitives.each_with_index { |item, index|
-					# 	d += item.path(index)
-					# }
+					d = ""
+					path = primitives.each_with_index { |item, index|
+						d += item.path(index)
+					}
 
-					# d += "z"
+					d += "z"
 
-					# @store.regions.where(:path => d, :floor => floor).first_or_create
+					@store.regions.where(:path => d, :floor => floor).first_or_create
 				end
 			end
 		}
