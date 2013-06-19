@@ -26,25 +26,29 @@ class MapParser < ParserBase
 
 					# puts primitives.count()
 					until path_closed == primitives.count()-1
-
+						# puts "path_closed = #{primitives[path_closed].type}, index+1 = #{primitives[index+1].type} "
 						# puts "#p = #{path_closed} - i = #{index+1}"
-						# puts "#{primitives[path_closed].x2} --- #{primitives[index+1].x1} --- #{primitives[path_closed].y2} --- #{primitives[index+1].y1}"
-						if (primitives[path_closed].x2 == primitives[index+1].x1) and primitives[path_closed].y2 == primitives[index+1].y1
+						# puts "path_closed.x2 = #{primitives[path_closed].x2} --- index+1.x1 = #{primitives[index+1].x1} --- #{primitives[path_closed].y2} --- #{primitives[index+1].y1}"
+						# puts "#{primitives[path_closed].x2}, #{primitives[index+1].x2}, #{primitives[path_closed].y2}, #{primitives[index+1].y2}"
+						
+						if (primitives[path_closed].x2 == primitives[index+1].x1 && primitives[path_closed].y2 == primitives[index+1].y1)
 							primitives[path_closed+1], primitives[index+1] = primitives[index+1], primitives[path_closed+1]
 							path_closed += 1
 							index = path_closed
 							# puts "ok"
-						elsif primitives[path_closed].x2 == primitives[index+1].x2 and primitives[path_closed].y2 == primitives[index+1].y2
-							primitives[index+1].invert
-							primitives[path_closed+1], primitives[index+1] = primitives[index+1], primitives[path_closed+1]
-							path_closed += 1
-							index = path_closed
-							# puts "revers ok"
 						else
-							index = index == primitives.count()-2 ? path_closed : index += 1
+							# puts "path_closed = #{primitives[path_closed].type}, index+1 = #{primitives[index+1].type} "
+							# puts "#{primitives[path_closed].x2}, #{primitives[index+1].x2}, #{primitives[path_closed].y2}, #{primitives[index+1].y2}"
+							if (primitives[path_closed].x2 == primitives[index+1].x2 && primitives[path_closed].y2 == primitives[index+1].y2)
+								primitives[index+1].invert
+								primitives[path_closed+1], primitives[index+1] = primitives[index+1], primitives[path_closed+1]
+								path_closed += 1
+								index = path_closed
+								# puts "revers ok"
+							else
+								index = index == primitives.count()-2 ? path_closed : index += 1
+							end
 						end
-
-
 					end
 
 					d = ""
@@ -53,6 +57,8 @@ class MapParser < ParserBase
 					}
 
 					d += "z"
+
+					# puts d
 
 					@store.regions.where(:path => d, :floor => floor).first_or_create
 				end
