@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607072849) do
+ActiveRecord::Schema.define(:version => 20130619113342) do
 
   create_table "brands", :force => true do |t|
     t.string   "title"
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20130607072849) do
     t.integer  "floor"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "color"
   end
 
   add_index "regions", ["pavilion_id"], :name => "index_regions_on_pavilion_id"

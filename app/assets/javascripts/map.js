@@ -1,6 +1,19 @@
 $(document).ready(function() {
 	var store = $(".attr").attr("store");
 	var floor = $(".attr").attr("floor");
+
+	$('#color').ColorPicker({
+		onSubmit: function(hsb, hex, rgb, el) {
+			$(el).val(hex);
+			$(el).ColorPickerHide();
+		},
+		onBeforeShow: function () {
+			$(this).ColorPickerSetColor(this.value);
+		}
+	}).bind('keyup', function(){
+		$(this).ColorPickerSetColor(this.value);
+	});
+
 	$.ajax({
 		type: 'POST',
 		data: {store: store, floor: floor},
@@ -20,6 +33,7 @@ $(document).ready(function() {
 
 		        	$("#region").val(attr.id);
 		      		$("#pavilion").val(attr.pavilion_id);
+		      		$("#color").val(attr.color);
 		        });
 		    });
 

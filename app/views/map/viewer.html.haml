@@ -1,6 +1,14 @@
 = content_for :scripts do
 	= javascript_include_tag "raphael-min"
 	= javascript_include_tag "map"
+	= javascript_include_tag "colorpicker"
+	= javascript_include_tag "eye"
+	= javascript_include_tag "utils"
+	= javascript_include_tag "layout?ver=1.0.2"
+
+= content_for :style do
+	= stylesheet_link_tag :colorpicker, :media => 'screen'
+	= stylesheet_link_tag :layout, :media => 'screen'
 
 .map_manager
 	.attr{:store => params[:store], :floor => params[:floor]}
@@ -15,5 +23,8 @@
 			%td
 				= select_tag(:pavilion, options_for_select(@pavilions.map {|pavilion| [pavilion.brandname, pavilion.id]}))
 				= hidden_field_tag "floor", params[:floor]
+		%tr
+			%td
+				= text_field_tag(:color)
 
 	= submit_tag "Confirm"
