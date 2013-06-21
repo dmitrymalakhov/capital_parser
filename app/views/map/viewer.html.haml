@@ -13,18 +13,23 @@
 .map_manager
 	.attr{:store => params[:store], :floor => params[:floor]}
 
-	= form_tag({:controller => "map", :action => "set_attr"}, :method => "get")
-	%table
-		%tr
-			%td
-				= @store.title
-			%td
-				= select_tag(:region, options_for_select(@regions.map {|region| [region.id, region.id]}))
-			%td
-				= select_tag(:pavilion, options_for_select(@pavilions.map {|pavilion| [pavilion.brandname, pavilion.id]}))
-				= hidden_field_tag "floor", params[:floor]
-		%tr
-			%td
-				= text_field_tag(:color)
-
-	= submit_tag "Confirm"
+	= @store.title
+	.form#stylized
+		= form_tag({:controller => "map", :action => "set_attr"}, :method => "get")
+		%table
+			%tr
+				%td
+					= label_tag :region
+					= select_tag(:region, options_for_select(@regions.map {|region| [region.id, region.id]}))
+			%tr
+				%td
+					= label_tag :pavilion
+					= select_tag(:pavilion, options_for_select(@pavilions.map {|pavilion| [pavilion.brandname, pavilion.id]}))
+					= hidden_field_tag "floor", params[:floor]
+			%tr
+				%td
+					= label_tag :color
+					= text_field_tag(:color)
+			%tr
+				%td
+					= submit_tag "Confirm"

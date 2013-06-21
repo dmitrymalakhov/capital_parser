@@ -30,7 +30,7 @@ $(document).ready(function() {
 			paper.forEach(function(element) {
 		        element.click(function(e) {
 		        	attr = JSON.parse($(e.target).attr('font'));
-
+		        	
 		        	$("#region").val(attr.id);
 		      		$("#pavilion").val(attr.pavilion_id);
 		      		$("#color").val(attr.color);
