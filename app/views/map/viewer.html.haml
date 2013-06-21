@@ -20,16 +20,24 @@
 			%tr
 				%td
 					= label_tag :region
+				%td
 					= select_tag(:region, options_for_select(@regions.map {|region| [region.id, region.id]}))
 			%tr
 				%td
 					= label_tag :pavilion
+				%td
 					= select_tag(:pavilion, options_for_select(@pavilions.map {|pavilion| [pavilion.brandname, pavilion.id]}))
 					= hidden_field_tag "floor", params[:floor]
 			%tr
 				%td
 					= label_tag :color
+				%td
 					= text_field_tag(:color)
+			%tr
+				%td
+					= label_tag :titlebox
+				%td
+					= text_field_tag(:titlebox)
 			%tr
 				%td
 					= submit_tag "Confirm"
