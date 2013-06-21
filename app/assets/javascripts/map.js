@@ -28,9 +28,13 @@ $(document).ready(function() {
 			var paper = Raphael(map).translate(50, 0);
 
 			paper.forEach(function(element) {
+				box = element.getBBox();
+
+				titlebox = element.paper.rect(box.x,box.y,box.width,box.height);
+
 		        element.click(function(e) {
 		        	attr = JSON.parse($(e.target).attr('font'));
-		        	
+
 		        	$("#region").val(attr.id);
 		      		$("#pavilion").val(attr.pavilion_id);
 		      		$("#color").val(attr.color);
