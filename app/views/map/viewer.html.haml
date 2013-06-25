@@ -37,7 +37,27 @@
 				%td
 					= label_tag :titlebox
 				%td
-					= text_field_tag(:titlebox)
+					%table
+						%tr
+							%td
+								x
+							%td
+								= number_field_tag :titlebox_x, 0, {:class => "titlebox" ,:min => 0, :max =>1000,  :step => 1}
+						%tr
+							%td
+								y
+							%td
+								= number_field_tag :titlebox_y, 0, {:class => "titlebox", :min => 0, :max =>1000,  :step => 1}
+						%tr
+							%td
+								width
+							%td
+								= number_field_tag :titlebox_width, 0, {:class => "titlebox", :min => 0, :max =>1000,  :step => 1}
+						%tr
+							%td
+								height
+							%td
+								= number_field_tag :titlebox_height, 0, {:class => "titlebox", :min => 0, :max =>1000,  :step => 1}
 			%tr
 				%td
 					= submit_tag "Confirm"

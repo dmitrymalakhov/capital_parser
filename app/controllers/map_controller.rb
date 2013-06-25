@@ -12,7 +12,7 @@ class MapController < ApplicationController
 	end
 
 	def set_attr
-		Region.find(params[:region]).update_attributes(:pavilion_id => params[:pavilion], :color => params[:color], :titlebox => params[:titlebox])
+		Region.find(params[:region]).update_attributes(:pavilion_id => params[:pavilion], :color => params[:color], :titlebox => "#{params[:titlebox_x]},#{params[:titlebox_y]},#{params[:titlebox_width]},#{params[:titlebox_height]}")
 		redirect_to :action => "viewer", :store => 1, :floor => params[:floor]
 	end
 

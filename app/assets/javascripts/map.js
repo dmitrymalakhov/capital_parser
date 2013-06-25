@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	var store = $(".attr").attr("store");
 	var floor = $(".attr").attr("floor");
+	
 
 	$('#color').ColorPicker({
 		onSubmit: function(hsb, hex, rgb, el) {
@@ -24,11 +25,11 @@ $(document).ready(function() {
 			$.each(response, function(i,item){
 				map.push(item);
 			})
-
-			var paper = Raphael(map).translate(50, 0);
 			var titlebox;
-
+			var paper = Raphael(map).translate(50, 0);
+					
 			paper.forEach(function(element) {
+			
 		        element.click(function(e) {
 		        	attr = JSON.parse($(e.target).attr('font'));
 		        	if (typeof(titlebox) != "undefined") {
@@ -37,26 +38,30 @@ $(document).ready(function() {
 
 		        	if (attr.titlebox == null) {
 		        		box = element.getBBox();
-						titlebox = element.paper.rect(box.x,box.y,box.width,box.height);
-						$("#titlebox").val([box.x,box.y,box.width,box.height].join(","));
+		        		
+		        		$.each(box, function(i,item) {
+		        			box[i] = Math.round(item);
+		        		});
+
+		        		titlebox = initTitlebox(box.x,box.y,box.width,box.height, element);
 		        	} else {
-		        		$("#titlebox").val(attr.titlebox);
 		        		points = attr.titlebox.split(',');
-		        		titlebox = element.paper.rect(points[0],points[1],points[2],points[3]);
+
+		        		titlebox = initTitlebox(points[0],points[1],points[2],points[3], element);		        		
 		        	}
 
 		        	$("#region").val(attr.id);
 		      		$("#pavilion").val(attr.pavilion_id);
 		      		$("#color").val(attr.color);
 
-		      		$("#titlebox").change(function() {
+		      		$(".titlebox").change(function() {
 		      			points = $(this).val().split(',');
 		      			titlebox.attr({
-		      				x: points[0],
-		      				y: points[1],
-		      				width: points[2],
-		      				height: points[3]
-		      			})
+		      				x: $("#titlebox_x").val(),
+		      				y: $("#titlebox_y").val(),
+		      				width: $("#titlebox_width").val(),
+		      				height: $("#titlebox_height").val()
+		      			});
 		      		});
 		        });
 		    });
@@ -65,5 +70,14 @@ $(document).ready(function() {
 		}
 	});
 
+	function initTitlebox(x, y, width, height, element) {
+		$("#titlebox_x").val(x);
+		$("#titlebox_y").val(y);
+		$("#titlebox_width").val(width);
+		$("#titlebox_height").val(height);
 
+		titlebox = element.paper.rect(x, y, width, height);
+
+		return titlebox;
+	}
 })
