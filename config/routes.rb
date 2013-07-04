@@ -6,6 +6,7 @@ CapitalAdmin::Application.routes.draw do
   
   match 'parser' => 'parser#index'
   match 'parser/go' => 'parser#go'
+  match 'parser/preload' => 'parser#preload'
   match 'map' => 'map#index'
   match 'map/load' => 'map#load'
   match 'map/viewer/json/path' => 'map#get_regions'
