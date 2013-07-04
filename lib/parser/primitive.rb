@@ -44,10 +44,10 @@ class Primitive
 		case @node.name
 			when "line"
 				@type = "line"
-				@x1 = @node.xpath('@x1').to_s
-				@y1 = @node.xpath('@y1').to_s
-				@x2 = @node.xpath('@x2').to_s
-				@y2 = @node.xpath('@y2').to_s
+				@x1 = @node.xpath('@x1').to_s.to_f.round(3).to_s
+				@y1 = @node.xpath('@y1').to_s.to_f.round(3).to_s
+				@x2 = @node.xpath('@x2').to_s.to_f.round(3).to_s
+				@y2 = @node.xpath('@y2').to_s.to_f.round(3).to_s
 
 			when "polyline"
 				@type = "polyline"
@@ -57,10 +57,10 @@ class Primitive
 				begin_point = @points.first.split(",")
 				end_point = @points.last.split(",")
 
-				@x1 = begin_point[0]
-				@y1 = begin_point[1]
-				@x2 = end_point[0]
-				@y2 = end_point[1]
+				@x1 = begin_point[0].to_f.round(3).to_s
+				@y1 = begin_point[1].to_f.round(3).to_s
+				@x2 = end_point[0].to_f.round(3).to_s
+				@y2 = end_point[1].to_f.round(3).to_s
 
 			when "path"
 				@type = "path"
@@ -73,8 +73,8 @@ class Primitive
 					end_point.delete(0)
 				end
 
-				@x1 = begin_point[0].to_s
-				@y1 = begin_point[1].to_s
+				@x1 = begin_point[0].round(3).to_s
+				@y1 = begin_point[1].round(3).to_s
 				@x2 = (end_point[4]+begin_point[0]).round(3).to_s
 				@y2 = (end_point[5]+begin_point[1]).round(3).to_s
 				@c1 = [end_point[0]+begin_point[0], end_point[1]+begin_point[1]]

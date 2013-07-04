@@ -5,11 +5,10 @@ require 'parser/primitive'
 
 class MapParser < ParserBase
 	def update
-		doc = get_xml("maps/#{@store.id}/1.xml")
-
 		Dir.foreach("maps/#{@store.id}") {|file|
 			if file =~ /.xml/
 
+				doc = get_xml("maps/#{@store.id}/#{file}")
 				temp = /.*?([\d]+).*/.match  file
 				floor = temp[1]
 
@@ -29,7 +28,8 @@ class MapParser < ParserBase
 						# puts "path_closed = #{primitives[path_closed].type}, index+1 = #{primitives[index+1].type} "
 						# puts "#p = #{path_closed} - i = #{index+1}"
 						# puts "path_closed.x2 = #{primitives[path_closed].x2} --- index+1.x1 = #{primitives[index+1].x1} --- #{primitives[path_closed].y2} --- #{primitives[index+1].y1}"
-						# puts "#{primitives[path_closed].x2}, #{primitives[index+1].x2}, #{primitives[path_closed].y2}, #{primitives[index+1].y2}"
+						puts "#{primitives[path_closed].x2}, #{primitives[index+1].x2}, #{primitives[path_closed].y2}, #{primitives[index+1].y2}"
+						# puts "#{primitives[path_closed].x2}, #{primitives[index+1].x1}, #{primitives[path_closed].y2}, #{primitives[index+1].y1}"
 						
 						if (primitives[path_closed].x2 == primitives[index+1].x1 && primitives[path_closed].y2 == primitives[index+1].y1)
 							primitives[path_closed+1], primitives[index+1] = primitives[index+1], primitives[path_closed+1]

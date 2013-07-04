@@ -148,6 +148,20 @@ module API
           end
           return array
         end
+
+        desc "Получить текст статьи"
+        get :get_content_by_store_id do
+          Store.find(params[:id]).news
+        end
+
+        desc "Получить изображения статьи"
+        get :get_images_by_store_id do
+          array = []
+          Store.find(params[:id]).news.each do |article|
+            array.concat(article.news_gallery)            
+          end
+          return array
+        end
       end
 
       resource :films do
