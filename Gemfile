@@ -26,6 +26,7 @@ group :assets do
  	gem "grape", "~> 0.4.1"
  	# gem "ensure-encoding", "~> 0.1"
  	gem "whenever", "~> 0.8.2"
+ 	gem "paperclip"
 end
 
 gem 'jquery-rails'

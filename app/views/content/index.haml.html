@@ -1,0 +1,5 @@
+%table
+	- @stores.each do |store|
+		%tr
+			%td= store.title
+			%td= button_to "view categories", :controller => 'content', :action => 'get_categories', :id => store.id

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620113533) do
+ActiveRecord::Schema.define(:version => 20130715231702) do
 
   create_table "brands", :force => true do |t|
     t.string   "title"
@@ -145,10 +145,11 @@ ActiveRecord::Schema.define(:version => 20130620113533) do
     t.integer  "pavilion_id"
     t.integer  "store_id"
     t.integer  "floor"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "color"
     t.string   "titlebox"
+    t.integer  "typemode",    :default => 0
   end
 
   add_index "regions", ["pavilion_id"], :name => "index_regions_on_pavilion_id"
@@ -163,6 +164,17 @@ ActiveRecord::Schema.define(:version => 20130620113533) do
     t.string   "news_url"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "typemodes", :force => true do |t|
+    t.string   "title"
+    t.integer  "store_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

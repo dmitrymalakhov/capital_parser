@@ -1,0 +1,17 @@
+= form_for @typemode, :html => { :multipart => true } do |f|
+  - if @typemode.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@typemode.errors.count, "error")} prohibited this typemode from being saved:"
+      %ul
+        - @typemode.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :store
+    = f.collection_select(:store_id, Store.find(:all), :id, :title, :prompt => true, :selected => params[:store])
+  .field
+    = f.file_field :image
+  .field
+    = f.label :title
+    = f.text_field :title
+  .actions
+    = f.submit 'Save'

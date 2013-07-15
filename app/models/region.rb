@@ -3,5 +3,5 @@ class Region < ActiveRecord::Base
 
   	belongs_to :pavilion
   	belongs_to :store
-  	attr_accessible :pavilion_id, :store_id, :path, :floor, :color, :titlebox
+  	attr_accessible :pavilion_id, :store_id, :path, :floor, :color, :titlebox, :typemode
 end

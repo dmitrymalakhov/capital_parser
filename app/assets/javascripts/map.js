@@ -29,7 +29,7 @@ $(document).ready(function() {
 			var paper = Raphael(map).translate(50, 0);
 					
 			paper.forEach(function(element) {
-			
+				// element.attr('fill','url(http://yandex.st/lego/_/X31pO5JJJKEifJ7sfvuf3mGeD_8.png)');
 		        element.click(function(e) {
 		        	attr = JSON.parse($(e.target).attr('font'));
 		        	if (typeof(titlebox) != "undefined") {
@@ -53,7 +53,7 @@ $(document).ready(function() {
 		        	$("#region").val(attr.id);
 		      		$("#pavilion").val(attr.pavilion_id);
 		      		$("#color").val(attr.color);
-
+		      		$("#typemode").val(attr.typemode);
 		      		$(".titlebox").change(function() {
 		      			points = $(this).val().split(',');
 		      			titlebox.attr({

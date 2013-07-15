@@ -35,6 +35,12 @@
 					= text_field_tag(:color)
 			%tr
 				%td
+					= label_tag :typemode
+				%td
+					= select_tag(:typemode, options_for_select(Typemode.where(:store_id => [params[:store], nil]).map {|typemode| [typemode.title, typemode.id]}))
+
+			%tr
+				%td
 					= label_tag :titlebox
 				%td
 					%table

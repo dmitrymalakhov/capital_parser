@@ -1,13 +1,18 @@
 CapitalAdmin::Application.routes.draw do
+  resources :typemodes
+
+
   root :to => 'application#index' 
   
   resources :regions
   match 'regions/new' => 'regions#new'
   
   match 'parser' => 'parser#index'
+  match 'map' => 'map#index'
+  match 'content' => 'content#index'
+
   match 'parser/go' => 'parser#go'
   match 'parser/preload' => 'parser#preload'
-  match 'map' => 'map#index'
   match 'map/load' => 'map#load'
   match 'map/viewer/json/path' => 'map#get_regions'
   match 'map/viewer/json/pavilion_by_path' => 'map#get_pavilion_by_path'

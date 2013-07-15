@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @typemode.title
+
+= link_to 'Edit', edit_typemode_path(@typemode)
+\|
+= link_to 'Back', typemodes_path
