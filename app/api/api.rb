@@ -119,6 +119,13 @@ module API
         end
       end
 
+      resource :typemodes do
+        desc "Получить все виды технических павильонов"
+          get :get_by_store_id do
+          Store.find(params[:id]).typemodes
+        end
+      end
+
       resource :maps do
         desc "Получить все path для ТРЦ"
           get :get_by_store_id do
