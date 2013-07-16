@@ -15,18 +15,30 @@ class ParserController < ApplicationController
 	end
 
 	def go
-		store = Store.find(params[:id])
+		if params[:id] == "4"
+			store = Store.find(params[:id])
 
-		puts "#{store.title} parsing begin..."
-		s_parser = SFRParser.new(store)
-		c_parser = CinemaParser.new(store)
+			puts "#{store.title} parsing begin..."
+			e_parser = EParser.new(store)
+			
+			puts "start category parsing"
+			e_parser.update_category()
+			puts "start news parsing"
+			e_parser.update_news
+		else
+			store = Store.find(params[:id])
 
-		puts "start cinema parsing"
-		c_parser.update_schedule
-		puts "start category parsing"
-		s_parser.update_category()
-		puts "start news parsing"
-		s_parser.update_news
+			puts "#{store.title} parsing begin..."
+			s_parser = SFRParser.new(store)
+			c_parser = CinemaParser.new(store)
+
+			puts "start cinema parsing"
+			c_parser.update_schedule
+			puts "start category parsing"
+			s_parser.update_category()
+			puts "start news parsing"
+			s_parser.update_news			
+		end
 
 		# category = parser.get_categories.first
 		# pavilion = parser.get_pavilions_by_category(category).first
