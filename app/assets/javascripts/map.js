@@ -27,7 +27,10 @@ $(document).ready(function() {
 			})
 			var titlebox;
 			var paper = Raphael(map).translate(50, 0);
-					
+			var canvas_box = paper.getBBox();
+			
+			$(".boundmap").html("width: " + canvas_box.width + ", height: " + canvas_box.height);
+
 			paper.forEach(function(element) {
 				// element.attr('fill','url(http://yandex.st/lego/_/X31pO5JJJKEifJ7sfvuf3mGeD_8.png)');
 		        element.click(function(e) {
