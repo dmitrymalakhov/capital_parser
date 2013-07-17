@@ -122,7 +122,8 @@ module API
       resource :typemodes do
         desc "Получить все виды технических павильонов"
           get :get_by_store_id do
-          Store.find(params[:id]).typemodes
+          Store.find(params[:id]).typemodes.map {|typemode| {:id => typemode.id ,:title => typemode.title, :image_path => typemode.image.url()}}
+          # Store.find(params[:id]).typemodes
         end
       end
 
