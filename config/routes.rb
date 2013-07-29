@@ -18,6 +18,7 @@ CapitalAdmin::Application.routes.draw do
   match 'map/viewer/json/pavilion_by_path' => 'map#get_pavilion_by_path'
   match 'map/viewer' => 'map#viewer'
   match 'map/viewer/set_attr' => 'map#set_attr'
+  match 'map/viewer/delete_path' => 'map#delete_path'
 
   
   mount API::API => '/'

@@ -1,7 +1,6 @@
 $(document).ready(function() {
 	var store = $(".attr").attr("store");
 	var floor = $(".attr").attr("floor");
-	
 
 	$('#color').ColorPicker({
 		onSubmit: function(hsb, hex, rgb, el) {
@@ -53,6 +52,22 @@ $(document).ready(function() {
 		        		titlebox = initTitlebox(points[0],points[1],points[2],points[3], element);		        		
 		        	}
 
+		        	$(".delete_path").attr("name", attr.id);
+
+		        	$(".delete_path").click(function() {
+						var region = $(this).attr("name");
+						$.ajax({
+							type: 'POST',
+							data: {store: store, region: region},
+							url: "/map/viewer/delete_path",
+							success: function (response){
+								alert("Павильон удален");
+								element.remove();
+								element.toBack();
+							}
+						});
+					});
+
 		        	$("#region").val(attr.id);
 		      		$("#pavilion").val(attr.pavilion_id);
 		      		$("#color").val(attr.color);
@@ -71,7 +86,7 @@ $(document).ready(function() {
 
 		    $("svg").removeAttr("style");
 		}
-	});
+	});	
 
 	function initTitlebox(x, y, width, height, element) {
 		$("#titlebox_x").val(x);

@@ -21,6 +21,14 @@ class MapController < ApplicationController
 		@content = parser.update
 	end
 
+	def delete_path
+		response = Store.find(params[:store]).regions.find(params[:region]).destroy
+		respond_to do |format|
+	      # format.html # index.html.erb
+	      format.json { render json: response }
+	    end
+	end
+
 	def get_regions
 		@regions =  Store.find(params[:store]).regions.where(:floor => params[:floor])
 
