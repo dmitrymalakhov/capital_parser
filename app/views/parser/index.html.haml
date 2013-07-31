@@ -1,5 +1,20 @@
+= content_for :scripts do
+	= javascript_include_tag "parser"
+
 %table
 	- @stores.each do |store|
 		%tr
-			%td= store.title
-			%td= button_to "Parsing", :controller => 'parser', :action => 'go', :id => store.id
+			%td
+				.store{:name => store.id}= store.title
+			%td 
+				%ul
+					%li 
+						Павильон 
+						= check_box_tag("pavilion_#{store.id}", 1);
+					%li 
+						Новости 
+						= check_box_tag("news_#{store.id}", 1);
+					%li 
+						Кинотеатр
+						= check_box_tag("cinema_#{store.id}", 1);
+			%td= link_to "Parsing", "#", {:name => store.id, :class => "parsing"}
