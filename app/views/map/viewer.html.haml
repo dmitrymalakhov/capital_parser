@@ -30,6 +30,7 @@
 				%td
 					= select_tag(:pavilion, options_for_select(@pavilions.map {|pavilion| [pavilion.brandname, pavilion.id]}))
 					= hidden_field_tag "floor", params[:floor]
+					= hidden_field_tag "store", params[:store]
 			%tr
 				%td
 					= label_tag :color

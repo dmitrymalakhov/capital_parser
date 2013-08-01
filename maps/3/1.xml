@@ -1233,4 +1233,14 @@
 		<polyline fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 		383.416,481.34 398.872,481.34 398.872,534.875 383.416,534.875 383.416,481.34 	"/>
 </g>
+<g id="REGION_111_">
+	
+		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="400.115" y1="481.34" x2="426.709" y2="481.34"/>
+	
+		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="400.115" y1="534.875" x2="400.115" y2="481.34"/>
+	
+		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="426.709" y1="481.34" x2="426.709" y2="534.875"/>
+	
+		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="426.709" y1="534.875" x2="400.115" y2="534.875"/>
+</g>
 </svg>
