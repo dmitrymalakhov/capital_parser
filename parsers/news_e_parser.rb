@@ -13,12 +13,13 @@ doc.css(".block_is td.art_sect").each do |news|
 	title = news.css("a.menunews").text
 	path = news.css("a.menunews").xpath('@href').text
 
+	puts path
 	article = Nokogiri::HTML(open("http://www.etagi.ru#{path}"))
 	article.xpath('//@style').remove
 	article.search('script').remove
 
 	content = article.css(".block_is table[cellpadding='5']")
-
+	puts content
 	content.css("img").each do |img|
 		src = img.xpath('@src').text
 		puts "#{src}"

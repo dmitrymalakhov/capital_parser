@@ -19,8 +19,7 @@ class EParser < ParserBase
 				path = news.css("a.menunews").xpath('@href').text
 
 				news_obj = @store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
-
-				if news_obj.new_record?
+				
 					article = get_document("#{@store.base_url}#{path}")
 
 					content = article.css(".block_is table[cellpadding='5']")
@@ -35,6 +34,7 @@ class EParser < ParserBase
 					content.search('img, hr').remove
 
 					news_obj.update_attributes(:content => content.text)
+				if news_obj.new_record?
 					news_obj.save
 				end
 			end
