@@ -22,11 +22,11 @@ class ParserController < ApplicationController
 			puts "#{store.title} parsing begin..."
 			e_parser = EParser.new(store)
 			
-			if params['pavilion'] #!!!!!!!!!!!!!!!!!! is true
+			if params['pavilion'] == "true"
 				puts "start category parsing"
 				e_parser.update_category()
 			end
-			if params['news']
+			if params['news'] == "true"
 				puts "start news parsing"
 				e_parser.update_news
 			end
@@ -36,15 +36,15 @@ class ParserController < ApplicationController
 			puts "#{store.title} parsing begin..."
 			s_parser = SFRParser.new(store)
 			c_parser = CinemaParser.new(store)
-			if params['cinema']
+			if params['cinema'] == "true"
 				puts "start cinema parsing"
 				c_parser.update_schedule
 			end
-			if params['pavilion']
+			if params['pavilion'] == "true"
 				puts "start category parsing"
 				s_parser.update_category()
 			end
-			if params['news']
+			if params['news'] == "true"
 				puts "start news parsing"
 				s_parser.update_news
 			end		
