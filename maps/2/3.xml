@@ -465,4 +465,14 @@
 	
 		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="575.105" y1="515.698" x2="527.93" y2="453.263"/>
 </g>
+<g id="REGION_44_">
+	
+		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="456.867" y1="360.677" x2="472.166" y2="360.677"/>
+	
+		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="456.867" y1="374.875" x2="456.867" y2="360.677"/>
+	
+		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="472.166" y1="360.677" x2="472.166" y2="374.875"/>
+	
+		<line fill="none" stroke="#FF0000" stroke-width="0.9921" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="472.166" y1="374.875" x2="456.867" y2="374.875"/>
+</g>
 </svg>
