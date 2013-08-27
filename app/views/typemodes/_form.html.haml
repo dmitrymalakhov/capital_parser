@@ -7,7 +7,7 @@
           %li= msg
   .field
     = f.label :store
-    = f.collection_select(:store_id, Store.find(:all), :id, :title, :prompt => true, :selected => params[:store])
+    = f.collection_select(:store_id, Store.all, :id, :title, :prompt => true)
   .field
     = f.file_field :image
   .field
