@@ -2,7 +2,7 @@ class TypemodesController < ApplicationController
   # GET /typemodes
   # GET /typemodes.json
   def index
-    @typemodes = Typemode.all
+    @typemodes = Typemode.order("store_id").all
 
     respond_to do |format|
       format.html # index.html.erb
