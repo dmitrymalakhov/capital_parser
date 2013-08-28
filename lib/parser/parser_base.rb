@@ -6,9 +6,11 @@ class ParserBase
 		@store = store
 	end
 
-	# def get_status()
-	# 	puts "OK"
-	# end
+	def get_status()
+		File.open("test.html", "w+") do |f|
+		  f.write("fffff")
+		end
+	end
 
 	# def get_categories()
 	# 	@store.categories
