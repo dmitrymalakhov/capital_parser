@@ -10,6 +10,7 @@
   - @typemodes.each do |typemode|
     %tr
       %td= typemode.title
+      %td= !typemode.store.nil? ? typemode.store.title : "Not avalible"
       %td= link_to 'Show', typemode
       %td= link_to 'Edit', edit_typemode_path(typemode)
       %td= link_to 'Destroy', typemode, :method => :delete, :data => { :confirm => 'Are you sure?' }
