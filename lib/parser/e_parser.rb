@@ -18,7 +18,7 @@ class EParser < ParserBase
 				title = news.css("a.menunews").text
 				path = news.css("a.menunews").xpath('@href').text
 
-				news_obj = @store.news.where(:title => title).first_or_create(:title => title, :date_publication => date)
+				news_obj = @store.news.where(:title => title, :date_publication => date).first_or_create(:title => title, :date_publication => date)
 				
 					article = get_document("#{@store.base_url}#{path}")
 

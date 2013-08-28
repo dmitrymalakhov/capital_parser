@@ -22,7 +22,7 @@ class SFRParser < ParserBase
 				content = article.css(".article .block_is")
 
 				date = content.css(".header .date").text
-				news_obj = @store.news.where(:title => title).first_or_initialize(:title => title, :date_publication => date)
+				news_obj = @store.news.where(:title => title, :date_publication => date).first_or_initialize(:title => title, :date_publication => date)
 
 				if news_obj.new_record?
 					content.css(".mess_standart img").each do |img|

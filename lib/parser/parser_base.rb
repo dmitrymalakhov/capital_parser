@@ -7,9 +7,7 @@ class ParserBase
 	end
 
 	def get_status()
-		File.open("test.html", "w+") do |f|
-		  f.write("fffff")
-		end
+		puts "OK"
 	end
 
 	# def get_categories()
