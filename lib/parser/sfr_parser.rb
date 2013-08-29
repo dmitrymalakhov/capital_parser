@@ -22,7 +22,7 @@ class SFRParser < ParserBase
 				content = article.css(".article .block_is")
 
 				date = content.css(".header .date").text
-				news_obj = @store.news.where(:title => title, :date_publication => date).first_or_initialize(:title => title, :date_publication => date)
+				news_obj = @store.news.where(:title => title, :date_publication => date).first_or_initialize(:title => title, :date_publication => date, :site_url => path)
 
 				if news_obj.new_record?
 					content.css(".mess_standart img").each do |img|
@@ -138,6 +138,6 @@ class SFRParser < ParserBase
 
 
 
-		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone)
+		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone, :site_url => description_url)
 	end
 end

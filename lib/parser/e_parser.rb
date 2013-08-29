@@ -18,7 +18,7 @@ class EParser < ParserBase
 				title = news.css("a.menunews").text
 				path = news.css("a.menunews").xpath('@href').text
 
-				news_obj = @store.news.where(:title => title, :date_publication => date).first_or_create(:title => title, :date_publication => date)
+				news_obj = @store.news.where(:title => title, :date_publication => date).first_or_create(:title => title, :date_publication => date, :site_url => path)
 				
 					article = get_document("#{@store.base_url}#{path}")
 
@@ -149,6 +149,6 @@ class EParser < ParserBase
 		content.css('.h-mag_is').remove
 		content.css('.mag_is').remove
 		#!!!! error get content
-		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone)
+		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone, :site_url => description_url)
 	end
 end

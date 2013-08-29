@@ -4,6 +4,7 @@ class CreateNews < ActiveRecord::Migration
       t.string :title
       t.string :date_publication
       t.text :content
+      t.string :site_url
       t.references :store
 
       t.timestamps

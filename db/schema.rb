@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715231702) do
+ActiveRecord::Schema.define(:version => 20130829054309) do
 
   create_table "brands", :force => true do |t|
     t.string   "title"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20130715231702) do
     t.string   "title"
     t.string   "date_publication"
     t.text     "content"
+    t.string   "site_url"
     t.integer  "store_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -117,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20130715231702) do
     t.integer  "pavilion_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "site_url"
   end
 
   add_index "pavilion_descriptions", ["pavilion_id"], :name => "index_pavilion_descriptions_on_pavilion_id"
@@ -169,12 +171,13 @@ ActiveRecord::Schema.define(:version => 20130715231702) do
   create_table "typemodes", :force => true do |t|
     t.string   "title"
     t.integer  "store_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "path",               :default => ""
   end
 
 end
