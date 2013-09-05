@@ -26,7 +26,20 @@ news = doc.css(".block_is td.art_sect").first
 	end
 	content.search('img, hr').remove
 	text = content.text
-	puts "#{text.squeeze('\t')}"
+	result = ""
+	paragraph = text.split("\n")
+	text.split("\n").map { |paragraph|
+		cool_string = paragraph.tr("\t\n\r\u00A0\u0080-\u00bf",'').strip
+		# puts cool_string.bytes.to_a.join(" ")
+		# puts cool_string.empty?
+		if !cool_string.empty?
+			result = result + cool_string + "\n"
+		end
+	}
+
+	#.delete("\t\r").squeeze("\n").strip
+	# puts "#{text}"
+	puts "#{result}"
 
 # end
 

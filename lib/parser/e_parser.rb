@@ -33,7 +33,7 @@ class EParser < ParserBase
 					
 					content.search('img, hr').remove
 
-					news_obj.update_attributes(:content => content.text.strip)
+					news_obj.update_attributes(:content => beauty_string(content.text))
 				if news_obj.new_record?
 					news_obj.save
 				end

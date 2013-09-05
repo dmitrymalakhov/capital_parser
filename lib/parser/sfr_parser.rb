@@ -33,7 +33,7 @@ class SFRParser < ParserBase
 					content.css('.mess_standart').search('img, hr').remove
 					content.css('.header').remove
 
-					news_obj.update_attributes(:content => content.css('.mess_standart').text.strip)
+					news_obj.update_attributes(:content => beauty_string(content.css('.mess_standart').text))
 					news_obj.save
 				end
 			end

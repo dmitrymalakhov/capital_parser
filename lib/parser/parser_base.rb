@@ -33,6 +33,18 @@ class ParserBase
 
 	protected
 
+	def beauty_string(content)
+		result = ""
+		content.split("\n").map { |paragraph|
+			cool_string = paragraph.tr("\t\n\r\u00A0\u0080-\u00bf",'').strip
+
+			if !cool_string.empty?
+				result = result + cool_string + "\n"
+			end
+		}
+		return result
+	end
+
 	def get_document(path)
 		begin
 			doc = Nokogiri::HTML(open(path), nil, 'UTF-8')
