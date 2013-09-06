@@ -15,7 +15,7 @@ set :environment, 'development'
 # end
 # #
 every 1.minutes do
-	runner "ParserController.parse_news"
+	runner "ParserController.new().parse_news"
 end
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
