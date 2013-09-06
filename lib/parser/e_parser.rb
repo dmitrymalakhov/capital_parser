@@ -144,11 +144,20 @@ class EParser < ParserBase
 		if pavilion_obj.pavilion_description.nil?
 			pavilion_obj.pavilion_description = PavilionDescription.new()
 		end
+		
+		collection = content.css('.b-collection-wrap')
 
 		content.search('img').remove
 		content.css('.h-mag_is').remove
 		content.css('.mag_is').remove
+		content.css('.b-collection-wrap').remove
+		
+		collection_title = collection.css("h2").text
+		collection.css("h2").remove
+
+		content_compile = beauty_string(content.text) + "\n" + collection_title + "\n" + collection.text
+
 		#!!!! error get content
-		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content.text, :floor => floor, :site => site, :phone => phone, :site_url => description_url)
+		pavilion_obj.pavilion_description.update_attributes(:logo => logo, :content => content_compile, :floor => floor, :site => site, :phone => phone, :site_url => description_url)
 	end
 end
