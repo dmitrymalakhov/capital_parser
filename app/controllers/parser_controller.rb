@@ -14,8 +14,7 @@ class ParserController < ApplicationController
 		Store.where(:title => "Etagi", :base_url => "http://www.etagi.ru", :pavilion_url => "/?id=6964&oneblock=6964", :news_url => "/?id=226 /?id=227").first_or_create
 	end
 	
-	def parse_news
-		
+	def parse_news		
 		Store.find(:all).each do |store|
 			if(store.id == 4) {
 				e_parser = EParser.new(store)
@@ -28,7 +27,19 @@ class ParserController < ApplicationController
 			time = Time.new
 			puts "#{store.title} - News -  #{time.strftime("%Y-%m-%d %H:%M:%S")}"
 		end
+	end
 
+	def parse_cinema
+		store_f = Store.find(1)
+		cf_parser = CinemaParser.new(store_f)
+		cf_parser.update_schedule
+
+		store_s = Store.find(3)
+		cs_parser = CinemaParser.new(store_s)
+		cs_parser.update_schedule
+
+		time = Time.new
+		puts "Cinema -  #{time.strftime("%Y-%m-%d %H:%M:%S")}"
 	end
 
 	def go

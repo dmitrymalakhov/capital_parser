@@ -17,6 +17,10 @@ set :environment, 'development'
 every 1.day, :at => '12:00:00'  do
 	runner "ParserController.new().parse_news"
 end
+
+every 1.day, :at => '10:30:00'  do
+	runner "ParserController.new().parse_cinema"
+end
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
