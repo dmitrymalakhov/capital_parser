@@ -14,7 +14,7 @@ set :environment, 'development'
 #   rake "some:great:rake:task"
 # end
 # #
-every 1.minutes do
+every 1.day, :at => '12:00:00'  do
 	runner "ParserController.new().parse_news"
 end
 # every 4.days do

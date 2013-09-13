@@ -13,9 +13,24 @@ class ParserController < ApplicationController
 		Store.where(:title => "7sky", :base_url => "http://7nebonnov.ru", :pavilion_url => "/?id=227 /?id=226", :news_url => "/?id=201 /?id=234", :cinema_url => "http://www.cinemapark.ru/multiplexes/show/27").first_or_create
 		Store.where(:title => "Etagi", :base_url => "http://www.etagi.ru", :pavilion_url => "/?id=6964&oneblock=6964", :news_url => "/?id=226 /?id=227").first_or_create
 	end
+	
 	def parse_news
-		puts "Parsing News"
+		
+		Store.find(:all).each do |store|
+			if(store.id == 4) {
+				e_parser = EParser.new(store)
+				e_parser.update_news
+			} else {
+				s_parser = SFRParser.new(store)	
+				s_parser.update_news
+			}
+			
+			time = Time.new
+			puts "#{store.title} - News -  #{time.strftime("%Y-%m-%d %H:%M:%S")}"
+		end
+
 	end
+
 	def go
 		puts "store - #{params[:id]} news - #{params[:news]} cinema - #{params[:cinema]} pavilion - #{params[:pavilion]}"
 		if params[:id] == "4"
