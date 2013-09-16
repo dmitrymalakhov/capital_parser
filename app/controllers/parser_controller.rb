@@ -16,13 +16,13 @@ class ParserController < ApplicationController
 	
 	def parse_news		
 		Store.find(:all).each do |store|
-			if(store.id == 4) {
+			if store.id == 4
 				e_parser = EParser.new(store)
 				e_parser.update_news
-			} else {
+			else
 				s_parser = SFRParser.new(store)	
 				s_parser.update_news
-			}
+			end
 			
 			time = Time.new
 			puts "#{store.title} - News -  #{time.strftime("%Y-%m-%d %H:%M:%S")}"
