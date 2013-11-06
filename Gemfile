@@ -6,6 +6,8 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem "rake", "~> 10.1.0"
+gem 'bcrypt-ruby', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 group :development do
 	gem "capistrano-deploy", "~> 0.3.2", :require => nil
