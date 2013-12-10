@@ -16,6 +16,7 @@ class ParserController < ApplicationController
 	
 	def parse_news		
 		Store.find(:all).each do |store|
+
 			if store.id == 4
 				e_parser = EParser.new(store)
 				e_parser.update_news
@@ -58,6 +59,8 @@ class ParserController < ApplicationController
 				puts "start news parsing"
 				e_parser.update_news
 			end
+
+			store.cleanup
 		else
 			store = Store.find(params[:id])
 
@@ -76,6 +79,8 @@ class ParserController < ApplicationController
 				puts "start news parsing"
 				s_parser.update_news
 			end		
+
+			store.cleanup
 		end
 
 		# category = parser.get_categories.first

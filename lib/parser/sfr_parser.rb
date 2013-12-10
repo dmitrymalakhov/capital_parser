@@ -62,6 +62,9 @@ class SFRParser < ParserBase
 				pavilions.each do |pavilion|
 					brand_obj = Brand.where(:title => pavilion.text).first_or_create
 					pavilion_obj = category_obj.pavilions.where(:brand_id => brand_obj.id).first_or_create
+
+					pavilion_obj.update_attributes(:updated_at => Time.current)
+					
 					update_pavilion_description(pavilion_obj, pavilion['href'])
 				end
 			end

@@ -7,7 +7,8 @@ class Pavilion < ActiveRecord::Base
   has_one :pavilion_description
   has_many :pavilion_gallery
   has_one :region
-
+  attr_accessible :updated_at
+  
   def brandname
   	self.brand.title
   end
